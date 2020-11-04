@@ -1,0 +1,325 @@
+<div id="pageContent">
+ <div class="pageInner">
+  <div id="crumbs">
+   当前位置：
+   <a href="/">
+    首页
+   </a>
+   &gt;
+   <a>
+    采购意向公开-市级
+   </a>
+   &gt;
+   <a>
+    信息详情
+   </a>
+  </div>
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+   <title>
+   </title>
+   <head xmlns="">
+    <script type="text/javascript">
+     <!--
+	var currentpos,timer;
+	function initialize(){
+		timer=setInterval("scrollwindow()",60);
+	}
+	function sc(){
+		clearInterval(timer);
+	}
+	function scrollwindow(){
+		window.scrollBy(0,1);
+	}
+	document.onmousedown=sc
+	document.ondblclick=initialize
+	//-->
+    </script>
+    <style type="text/css">
+     *{
+            padding:0;
+            text-decoration:none;
+            list-style:none;
+        }
+
+        .li a{
+            color:#5a5353;
+            font-size:13px;
+            display:block;
+        }
+
+        .li a:hover{
+            color:#ccc;
+        }
+
+        .wrap{
+            height: 100%;
+            width: 100%;
+        }
+
+        .container-top{
+            float: left;
+            width: 20%;
+            overflow-y: scroll;
+            height: 60%;
+        }
+
+        .container-bottom{
+            float: right;
+            width: 78%;
+            overflow-y: scroll;
+            height: 60%;
+        }
+
+        .container-top ul{
+            list_style:none;
+        }
+
+        .container-top ul li{
+            line-height: 25px;
+            text-align:center;
+            background-color:#ccc;
+            margin-top: 7px;
+        }
+
+        .select{
+            background-image:linear-gradient(to right,#a6b4f8,#a6b4f8);
+        }
+
+        /*定义滚动条宽高及背景*/
+        ::-webkit-scrollbar{
+            width: 6px;
+            height: 8px;
+            background: white;
+        }
+        /*定义滑块*/
+        ::-webkit-scrollbar-thumb{
+            border-radius: 10px;
+            background: gray;
+        }
+
+       .inforTab ,.inforTab  tr th, .inforTab tr td {
+            border:1px solid #0094ff;
+        }
+
+        .inforTab {
+            width: 100%;
+            min-height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        .inforTab th{
+            background-color: #ABCDEF;
+        }
+    </style>
+    <script type="text/javascript">
+     function getByName(Name){ 
+    var i=document.getElementsByName(Name)
+       if(i>0){
+        return i;
+    }else{
+        var aEle=document.getElementsByTagName('*'); 
+        var arr=[];  
+         for(var i=0;i<aEle.length;i++){
+         if(aEle[i].getAttribute("name")==Name){
+            arr.push(aEle[i])
+                }
+            }
+         return arr; 
+        }
+    }
+    
+        function autoPlay(index){
+            var items = document.getElementById("list").getElementsByTagName("li");
+            var divs = getByName("con");
+            for(var i = 0;i< items.length; i++){
+                if(i==index){
+                    items[i].className = "select";
+                    divs[i].style.display = "block";
+                }else{
+                    items[i].className = "";
+                    divs[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+   </head>
+   <body xmlns="">
+    <table align="center" bgcolor="#cccccc" border="0" cellpadding="0" cellspacing="1" style="width:280mm;height:160mm;">
+     <tbody>
+      <tr>
+       <td bgcolor="#ffffff" valign="top">
+        <div class="wrap" style="background-color: #ffffff">
+         <div style="text-align: center;font-size: 25px;font-weight: bold">
+          天津市和平区人民检察院系统政府采购意向公告
+         </div>
+         <p align="center">
+          <font face="黑体" size="4">
+           天津市和平区人民检察院系统2020年10月至2020年11月政府采购意向
+          </font>
+         </p>
+         <p>
+          为便于供应商及时了解政府采购信息，根据《天津市政府采购意向公开工作方案》的有关要求，现将天津市和平区人民检察院系统
+        2020年10月至2020年11月采购意向公开如下：
+         </p>
+         <hr/>
+         <div style="overflow: hidden">
+          <div class="container-top" id="list">
+           <ul>
+            <li class="select" onmouseover="autoPlay(0)">
+             <a>
+              天津市和平区人民检察院机关意向公告
+             </a>
+            </li>
+           </ul>
+          </div>
+          <div class="container-bottom" id="item">
+           <div class="con" name="con">
+            <div style="text-align: center;font-size: 20px;font-weight: bold">
+             天津市和平区人民检察院机关政府采购意向公告
+            </div>
+            <p align="center">
+             <font face="黑体" size="4">
+              天津市和平区人民检察院机关2020年10月至2020年11月政府采购意向
+             </font>
+            </p>
+            <p>
+             为便于供应商及时了解政府采购信息，根据《天津市政府采购意向公开工作方案》的有关要求，现将天津市和平区人民检察院机关
+                    2020年10月至2020年11月采购意向公开如下：
+            </p>
+            <table class="inforTab">
+             <tr>
+              <th width="7%">
+               序号
+              </th>
+              <th width="15%">
+               采购项目名称
+              </th>
+              <th width="23%">
+               采购需求概况
+              </th>
+              <th width="10%">
+               预算金额（万元）
+              </th>
+              <th width="15%">
+               预计采购时间
+              </th>
+              <th width="15%">
+               执行的政府采购政策
+              </th>
+              <th width="15%">
+               备注
+              </th>
+             </tr>
+             <tr>
+              <td width="7%">
+               1
+              </td>
+              <td width="15%">
+               和平区人民检察院大楼物业管理服务项目
+              </td>
+              <td width="23%">
+               和平区人民检察院大楼物业管理服务项目，实现大楼安全稳定运行，做好大楼保洁服务及安保服务。
+各岗位人员具体工作内容、职责及服务标准
+（一）项目经理
+1、对本项目日常工作全权负责；
+2、负责贯彻和实施公司及上级部门的各项指令和有关规定；
+3、负责各岗位员工的管理、培训并组织完成绩效考核；
+4、定期主持召开例会，掌握员工思想动态，常与员工沟通，增强机体凝聚力；
+5、熟悉项目情况，与采购方保持密切联系，及时处理采购方诉求意见；
+6、对处理不了的问题及时向上级领导汇报，避免事态扩大；
+7、认真完成公司和采购方交办的其他工作。
+（二）保洁服务
+1、服务内容
+（1）办公室/会议室/值班室内的地面、墙面、玻璃内侧、门/窗框、垃圾桶、室内各类家具、卫生间/浴室、床的日常保洁及定期清洁；
+（2）公共区域的保洁服务：前厅、公共区域、浴室、电梯、楼梯、楼道、卫生间、电梯间等的地面、墙面、活动中心各项设施的清洁与保洁服务；
+（3）车场兼外围：车场及院落区域清洁工作，包括地面、车道、指示牌等清洁与保洁工作；
+（4）技术保洁：石材地面定期清洗养护、门厅玻璃定期清洁、楼内地毯定期清洗、门前牌匾定期清洁、皮质沙发定期养护工作。
+2、服务标准
+（1）清洁标准：楼道地面无杂物、无灰尘，目视干净；卫生间地面、大小便器、门窗隔板、垃圾桶、室内各类家具、卫生间/浴室、床的每日清洁，目视无污渍、无杂物、目视清洁。
+（2）办公室/会议室/值班室标准：桌椅、地面、墙面、窗台、屋内各种设施等每次会议前后清洁，无尘、无杂物。
+（3）车场及院落标准：地面、车道、指示牌等无杂物、无烟头、无纸屑。
+（4）技术保洁标准：电梯地面、轿厢、天花板、面板无污渍、无油渍、表面洁净、光亮；石材地面清洁，使用专业药剂配合机器进行清洁保养，清洁表面尘土污渍及严重污渍．地面洁净，无污渍、无油污。
+（三）安全秩序维护服务（含车场、消监控及门岗秩序维护服务）
+1、服务内容
+（1）服务内容：日间大厅门岗执守及楼内巡视服务；
+（2）24小时消防安全维护服务；
+（3）门前及院落车场、地上、地下车库停车管理及秩序维护。
+2、服务标准
+（1）门岗和消监控室24小时值守；
+（2）对外来人员问询登记；
+（3）院落、地上、地下车库车辆停放有序；
+（4） 按时关闭、开启院门；
+（5）按规定线路进行安全巡查并留存巡视记录；
+（6） 每日进行消防设施、消防隐患检查；
+（7）突发事件要有可行的应急预案并及时向相关领导报告，协助甲方完成临时性工作。
+（四）设备养护维护服务
+1、服务内容
+（1）负责制定各专项工程设施设备的维修保养计划并检查落实；
+（2）负责变配电室高低压配电柜、直流屏巡视操作运行，填写抄表、巡检记录，设备清扫，配合电器维修工作；
+（3）负责项目内公共区域门窗、水电的日常巡视和综合维修工作；
+（4）项目公共设施设备日常巡视，发现问题及时上报。
+2、服务标准
+（1）制度健全，工作标准及岗位责任制明确，执行良好。
+（2）技能熟练，严格遵守操作规程、规范。
+（3）人员合理调配，保证设施设备正常运行，配合项目经理完善项目公共设施设备的安全工作；
+（4）配电运行：保证24小时正常供电，及时处理突发性停电，完成各区域停、送电操作；每2小时巡视一次，记录巡视情况，抄录设备运行数据；做好室内卫生，按季节做好相应设备的清扫工作；配合甲方做好变压器高压试验，及数据的采集工作。
+（5）综合维修：碎修工作当日完成，项目内无跑冒滴漏的现象，门窗开启完好，照明无不亮的现象。
+（6）熟悉并了解项目整体基本情况及配套细节，特别是消防设施及水电管路，以便遇到特别特殊紧急事件时能立即找到关键部位，采取应急措施。
+（7）对火灾、水侵等突发事件配合消防做好应急处理，保证消防通道畅通。保安人员要做好安全检查工作，发现安全隐患及时上报处理，遇有特殊情况及时向项目管理人员汇报，必要时及时上报采购方负责人。
+              </td>
+              <td width="10%">
+               194
+              </td>
+              <td width="15%">
+               2020-11
+              </td>
+              <td width="15%">
+               采用公开招标的形式，委托市政采实施采购。
+              </td>
+              <td width="15%">
+              </td>
+             </tr>
+            </table>
+            <br/>
+            其他需要说明的事项：天津市和平区人民检察院坐落于天津市和平区保定道与湖北路交口，建筑面积约13915平方米。需要采购物业综合管理服务、保洁服务、秩序维护服务、设备维护服务。
+            <br/>
+            本次公开的采购意向是本单位政府采购工作的初步安排，具体采购项目情况以相关采购公告和采购文件为准。
+            <div style="text-align: right;font-size: 16px;margin-right: 1%;line-height: 20px;">
+             天津市和平区人民检察院机关
+            </div>
+            <div style="text-align: right;font-size: 16px;margin-right: 1%;">
+             2020年10月28日
+            </div>
+           </div>
+          </div>
+         </div>
+         <hr/>
+         <br/>
+         其他需要说明的事项：
+         <br/>
+         本次公开的采购意向是本单位政府采购工作的初步安排，具体采购项目情况以相关采购公告和采购文件为准。
+         <div style="text-align: right;font-size: 16px;margin-right: 1%;line-height: 23px;">
+          天津市和平区人民检察院系统
+         </div>
+         <div style="text-align: right;font-size: 16px;margin-right: 1%;">
+          2020年10月28日
+         </div>
+        </div>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </body>
+  </html>
+  <script type="text/javascript">
+   $(function() {
+    	var elements = document.getElementsByTagName("table") ;
+    	elements[0].style="width: 260mm; ";
+    	})
+  </script>
+ </div>
+</div>

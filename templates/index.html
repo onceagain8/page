@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>demo</title>
+		<link href="static/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="static/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
+		<link href="static/css/style.css" rel="stylesheet" >
+		<link href="static/css/main.css" rel = stylesheet >
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				font-weight: 500;
+				background-color: #7BA7AB;
+				font-family: "Microsoft YaHei","宋体","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
+			}
+
+			button {
+				outline: none;
+				border: none;
+				height: 48px;
+				width: 45px;
+				cursor: pointer;
+				position: relative;
+			}
+			input {
+				border: none;
+				outline: none;
+				width: 30%;
+				height: 42px;
+				padding-left: 13px;
+			}
+
+			div{
+				text-align: center;
+			}
+			.header{
+				height: auto;
+				min-height: 300px;
+				padding-top: 50px;
+				/* background-color: #7BA7AB; */
+			}
+			.content{
+				height: auto;
+				min-height: 238px;
+				/* background-color: #7BA7AB; */
+			}
+			div{
+				text-align: center;
+			}
+			.black{
+				height: auto;
+				background: url("image/index.png");
+			}
+			.logo{
+				/*background-color:skyblue;*/
+				height:auto;
+				width:auto;
+				min-width:300px;
+				max-width:400px;
+				min-height: 300px;
+				max-width: 400px;
+			}
+			input {
+				border: none;
+				outline: none;
+				width: 30%;
+				height: 42px;
+				padding-left: 13px;
+			}
+
+			button {
+				outline: none;
+				border: none;
+				height: 48px;
+				width: 45px;
+				cursor: pointer;
+				position: relative;
+			}
+			/* 搜索框1*/
+			.bar {background: #7BA7AB;}
+			.bar input {
+				border: 2px solid #7BA7AB;
+				border-radius: 5px;
+				background: #F9F0DA;
+				color: #9E9C9C;
+			}
+			.bar button {
+				top: 2.5px;
+				right: 10px;
+				background: #7BA7AB;
+				border-radius: 0 5px 5px 0;
+			}
+			.bar button:before {
+				content: "\f002";
+				font-family: FontAwesome;
+				font-size: 16px; 
+				color: #F9F0DA;
+			}
+			body {
+				margin: 0;
+				padding: 0;
+				font-weight: 500;
+				background-color: #7BA7AB;
+				font-family: "Microsoft YaHei","宋体","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
+			}
+	</style>
+	</head>
+	<body>
+		<div class="top">
+			<center> 
+				<ul>
+				<li><a href="/">首页</a></li>
+				<li><a href="cpy">企业视图</a></li>
+				<li><a href="gov">政府视图</a></li>
+				<li>
+					<a href="game">小游戏</a>
+					<ul>
+						<li><a href="game/2048">2048</a></li>
+						<li><a href="game/snake">贪吃蛇</a></li>
+					</ul>
+				</li>
+				</ul>
+			</center>      
+		</div>
+		<div class="header">
+			<div>
+				<img src="/static/image/tju.png" alt="" class="logo">
+			</div>
+		</div>
+		<div class="content">
+			<div>
+				<select>
+					<option value ="项目名称">项目名称</option>
+					<option value ="投标公司">投标公司</option>
+				</select>
+			</div>
+			<div class="search bar">
+				<form action="resultlist" method="post">
+					<input type="text" name="search" placeholder="请输入您要搜索的项目代码..." >
+					<button type="submit"></button>
+				</form>
+			</div>
+		</div>
+		<div class="black">
+			<img src="static/image/index.png" height="auto" width="100%">
+		</div>
+	</body>
+</html>

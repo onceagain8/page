@@ -1,0 +1,245 @@
+==================================================
+Error atThu Oct 15 19:02:45 2020
+Traceback (most recent call last):
+  File ".\beta\main.py", line 13, in <module>
+    GrabPages.grab(url)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 44, in grab
+    make_pages(file)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 16, in make_pages
+    SP.grab(int(it[0]),it[1])
+  File "D:\学习\项目制实践\爬虫\beta\GrabSignlePage.py", line 66, in grab
+    make_content(now_dir,content)
+  File "D:\学习\项目制实践\爬虫\beta\GrabSignlePage.py", line 35, in make_content
+    fout.write(content)
+UnicodeEncodeError: 'gbk' codec can't encode character '\ufeff' in position 397: illegal multibyte sequence
+
+
+==================================================
+Error atThu Oct 15 19:03:46 2020
+Traceback (most recent call last):
+  File ".\beta\main.py", line 13, in <module>
+    GrabPages.grab(url)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 44, in grab
+    make_pages(file)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 16, in make_pages
+    SP.grab(int(it[0]),it[1])
+  File "D:\学习\项目制实践\爬虫\beta\GrabSignlePage.py", line 66, in grab
+    make_content(now_dir,content)
+  File "D:\学习\项目制实践\爬虫\beta\GrabSignlePage.py", line 35, in make_content
+    fout.write(content)
+UnicodeEncodeError: 'gbk' codec can't encode character '\ufeff' in position 397: illegal multibyte sequence
+
+
+==================================================
+Error atThu Oct 15 19:10:51 2020
+Traceback (most recent call last):
+  File ".\beta\main.py", line 13, in <module>
+    GrabPages.grab(url)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 41, in grab
+    input()
+EOFError
+
+
+==================================================
+Error atThu Oct 15 19:13:00 2020
+Traceback (most recent call last):
+  File ".\beta\main.py", line 13, in <module>
+    GrabPages.grab(url)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 41, in grab
+    input()
+EOFError
+
+
+==================================================
+Error atThu Oct 15 19:14:02 2020
+Traceback (most recent call last):
+  File ".\beta\main.py", line 13, in <module>
+    GrabPages.grab(url)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 41, in grab
+    input()
+EOFError
+
+
+==================================================
+Error atWed Oct 28 23:23:40 2020
+Traceback (most recent call last):
+  File "./beta/main.py", line 19, in <module>
+    GrabPages.grab(url,l=1,r=40)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 45, in grab
+    make_pages(file)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(int(it[0]),it[1])
+  File "D:\学习\项目制实践\爬虫\beta\GrabSignlePage.py", line 50, in grab
+    file.encoding = chardet.detect(file.text)['encoding']
+NameError: name 'chardet' is not defined
+
+
+==================================================
+Error atWed Oct 28 23:24:31 2020
+Traceback (most recent call last):
+  File "./beta/main.py", line 19, in <module>
+    GrabPages.grab(url,l=1,r=40)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 45, in grab
+    make_pages(file)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(int(it[0]),it[1])
+  File "D:\学习\项目制实践\爬虫\beta\GrabSignlePage.py", line 51, in grab
+    file.encoding = chardet.detect(file.text)['encoding']
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\site-packages\chardet\__init__.py", line 34, in detect
+    '{0}'.format(type(byte_str)))
+TypeError: Expected object of type bytes or bytearray, got: <class 'str'>
+
+
+==================================================
+Error atWed Oct 28 23:27:32 2020
+Traceback (most recent call last):
+  File "./beta/main.py", line 19, in <module>
+    GrabPages.grab(url,l=1,r=40)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 45, in grab
+    make_pages(file)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(int(it[0]),it[1])
+  File "D:\学习\项目制实践\爬虫\beta\GrabSignlePage.py", line 55, in grab
+    content = get_content(file)
+  File "D:\学习\项目制实践\爬虫\beta\GrabSignlePage.py", line 22, in get_content
+    return now.prettify()
+AttributeError: 'NoneType' object has no attribute 'prettify'
+
+
+==================================================
+Error atWed Oct 28 23:28:12 2020
+Traceback (most recent call last):
+  File "./beta/main.py", line 19, in <module>
+    GrabPages.grab(url,l=1,r=40)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 45, in grab
+    make_pages(file)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(int(it[0]),it[1])
+  File "D:\学习\项目制实践\爬虫\beta\GrabSignlePage.py", line 56, in grab
+    content = get_content(file)
+  File "D:\学习\项目制实践\爬虫\beta\GrabSignlePage.py", line 22, in get_content
+    print(url)
+NameError: name 'url' is not defined
+
+
+==================================================
+Error atWed Oct 28 23:28:31 2020
+Traceback (most recent call last):
+  File "./beta/main.py", line 19, in <module>
+    GrabPages.grab(url,l=1,r=40)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 45, in grab
+    make_pages(file)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(int(it[0]),it[1])
+  File "D:\学习\项目制实践\爬虫\beta\GrabSignlePage.py", line 56, in grab
+    content = get_content(file)
+  File "D:\学习\项目制实践\爬虫\beta\GrabSignlePage.py", line 23, in get_content
+    return now.prettify()
+AttributeError: 'NoneType' object has no attribute 'prettify'
+
+
+==================================================
+Error atWed Oct 28 23:31:14 2020
+Traceback (most recent call last):
+  File "./beta/main.py", line 19, in <module>
+    GrabPages.grab(url,l=1,r=40)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 39, in grab
+    time.sleep(con.sleep_time)
+AttributeError: module 'constant' has no attribute 'sleep_time'
+
+
+==================================================
+Error atWed Oct 28 23:31:35 2020
+Traceback (most recent call last):
+  File "./beta/main.py", line 19, in <module>
+    GrabPages.grab(url,l=1,r=40)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 39, in grab
+    time.sleep(con.sleep_time)
+AttributeError: module 'constant' has no attribute 'sleep_time'
+
+
+==================================================
+Error atWed Oct 28 23:39:48 2020
+Traceback (most recent call last):
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000193F51FB358>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\site-packages\requests-2.23.0-py3.7.egg\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='www.ccgp-tianjin.gov.cn', port=80): Max retries exceeded with url: /viewer.do?id=207637030&amp;ver=2 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000193F51FB358>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./beta/main.py", line 19, in <module>
+    GrabPages.grab(url,l=1,r=40)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 45, in grab
+    make_pages(file)
+  File "D:\学习\项目制实践\爬虫\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(int(it[0]),it[1])
+  File "D:\学习\项目制实践\爬虫\beta\GrabSignlePage.py", line 48, in grab
+    file = requests.get(url,headers=con.init_header,verify=False)
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\site-packages\requests-2.23.0-py3.7.egg\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\site-packages\requests-2.23.0-py3.7.egg\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\site-packages\requests-2.23.0-py3.7.egg\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\site-packages\requests-2.23.0-py3.7.egg\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\15195\AppData\Local\Programs\Python\Python37\lib\site-packages\requests-2.23.0-py3.7.egg\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='www.ccgp-tianjin.gov.cn', port=80): Max retries exceeded with url: /viewer.do?id=207637030&amp;ver=2 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000193F51FB358>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+
+==================================================
+Error atSun Nov  1 14:21:55 2020
+Traceback (most recent call last):
+  File "./beta/main.py", line 19, in <module>
+    for line in fin.readlines():
+ValueError: I/O operation on closed file.
+
+
+==================================================
+Error atSun Nov  1 14:22:16 2020
+Traceback (most recent call last):
+  File "./beta/main.py", line 20, in <module>
+    print(f'\033[0;30;41m正在爬取{最上级网址}({备注})\033[0m')
+NameError: name '最上级网址' is not defined
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=utf-8" />
+    <!--手机屏幕兼容预处理-->
+    <meta name="viewport" content="width-device,user-scalable=no">
+    <title>Web Game-2048</title>
+    <link rel="stylesheet" type ="text/css" href="/static/css/2048/style.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/2048/cssReset.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+
+</head>
+<body style="background-color:#7BA7AB;width:100%; height:100%;">
+<div class="top">
+  <center> 
+    <ul>
+    <li><a href="/">首页</a></li>
+    <li><a href="/templates/cpy">企业视图</a></li>
+    <li><a href="/templates/gov">政府视图</a></li>
+    <li>
+      <a href="game">小游戏</a>
+      <ul>
+        <li><a href="game/2048">2048</a></li>
+        <li><a href="game/snake">贪吃蛇</a></li>
+      </ul>
+    </li>
+    </ul>
+  </center>      
+</div>
+<div class="header">
+    <div id="button-cell">
+		<div class="button-cell">2048</div>
+		<div class="button-cell">4*4</div>
+    </div>
+    <a href="javascript:newgame();" id="newgame"  onclick="newgame()">重  新  开  始</a>
+    <div id="score-cell">
+		<div class="score-cell">分数</div>
+		<div class="button-cell"><span id="score">0</span></div>      
+    </div>
+    <div id="hscore-cell">
+		<div class="hscore-cell">最高分数</div>
+		<div class="button-cell"><span id="score">0</span></div>
+    </div>
+</div>
+
+<div id="grid-container">
+    <div class="grid-cell" id="grid-cell-0-0"></div>
+    <div class="grid-cell" id="grid-cell-0-1"></div>
+    <div class="grid-cell" id="grid-cell-0-2"></div>
+    <div class="grid-cell" id="grid-cell-0-3"></div>
+
+    <div class="grid-cell" id="grid-cell-1-0"></div>
+    <div class="grid-cell" id="grid-cell-1-1"></div>
+    <div class="grid-cell" id="grid-cell-1-2"></div>
+    <div class="grid-cell" id="grid-cell-1-3"></div>
+
+    <div class="grid-cell" id="grid-cell-2-0"></div>
+    <div class="grid-cell" id="grid-cell-2-1"></div>
+    <div class="grid-cell" id="grid-cell-2-2"></div>
+    <div class="grid-cell" id="grid-cell-2-3"></div>
+
+    <div class="grid-cell" id="grid-cell-3-0"></div>
+    <div class="grid-cell" id="grid-cell-3-1"></div>
+    <div class="grid-cell" id="grid-cell-3-2"></div>
+    <div class="grid-cell" id="grid-cell-3-3"></div>
+</div>
+<div class='footer' style="bottom:0;position: absolute;">
+    <p class="text-center">code from xiaoboooo(github)</p>
+</div>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/static/js/2048/support.js"></script>
+<script type="text/javascript" src="/static/js/2048/show.js"></script>
+<script type="text/javascript" src="/static/js/2048/main.js"></script>
+</body>
+</html>

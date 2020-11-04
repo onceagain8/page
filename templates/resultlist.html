@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>demo</title>
+        <link href="static/css/style.css" rel="stylesheet" >
+        <link href="static/css/main.css"  rel="stylesheet">
+		<style>
+
+            .rightQuery {
+                top: 10%; 
+                left: 10%;
+                height: auto;
+                width: 80%;
+                position:absolute;
+                
+            }
+            .list{
+                display: block;
+                border: 5px solid #689adb;
+                margin-top: 10px;
+                left: 100px;
+                right:100px;
+                height: 80px;
+                background-color: #7bb9cc
+            }
+            .list a{
+                font-weight: 900;
+                font-size:20px;
+                
+            }
+            body {
+				margin: 0;
+				padding: 0;
+				font-weight: 500;
+				background-color: #7BA7AB;
+				font-family: "Microsoft YaHei","Microsoft YaHei","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
+            }
+            .black{
+                margin-top:100px;
+            }
+	    </style>
+	</head>
+	<body>
+		<div class="top">
+			<center> 
+				<ul>
+				<li><a href="/">首页</a></li>
+				<li><a href="cpy">企业视图</a></li>
+				<li><a href="gov">政府视图</a></li>
+				<li>
+					<a href="game">小游戏</a>
+					<ul>
+						<li><a href="game/2048">2048</a></li>
+						<li><a href="game/snake">贪吃蛇</a></li>
+					</ul>
+				</li>
+				</ul>
+			</center>      
+        </div>
+
+        <div class="rightQuery">
+            <h1>搜索结果:{{s}},搜索结果一共{{ans}}条</h1>
+            {% for it in d%}
+                {% if match_val[it] == Len %}
+                    <div class='list'>
+                        <p>
+                            <a href="{{date_file}}data/page/{{it}}/content.html">{{d[it]['ArticleTitle']}}</a>
+                        </p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <div class="black">
+                <img src="static/image/index.png" height="auto" width="100%">
+            </div>
+        </div>
+
+	</body>
+</html>
