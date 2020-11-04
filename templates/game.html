@@ -60,19 +60,20 @@
         </div>
 
         <div class="rightQuery">
-            <h1>搜索结果:{{s}},搜索结果一共{{ans}}条</h1>
-            {% for it in d%}
-                {% if match_val[it] == Len and Len != 0%}
-                    <div class='list'>
-                        <p>
-                            <a href="{{date_file}}data/page/{{it}}/content.html">{{d[it]['ArticleTitle']}}</a>
-                        </p>
-                    </div>
-                {% endif %}
-            {% endfor %}
-            <div class="black">
-                <img src="static/image/index.png" height="auto" width="100%">
-            </div>
+            <h1>GAME LIST:</h1>
+                <div class='list'>
+                    <p>
+                        <a href="{{url_for('game_2048')}}">2048</a>
+                    </p>
+                </div>
+                <div class='list'>
+                    <p>
+                        <a href="/templates/game/snake.html">贪吃蛇</a>
+                    </p>
+                </div>
+                <div class="black">
+                    <img src="static/image/index.png" height="auto" width="100%">
+                </div>
         </div>
 
 	</body>
