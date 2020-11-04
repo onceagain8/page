@@ -62,7 +62,7 @@
         <div class="rightQuery">
             <h1>搜索结果:{{s}},搜索结果一共{{ans}}条</h1>
             {% for it in d%}
-                {% if match_val[it] == Len %}
+                {% if match_val[it] == Len and Len != 0%}
                     <div class='list'>
                         <p>
                             <a href="{{date_file}}data/page/{{it}}/content.html">{{d[it]['ArticleTitle']}}</a>

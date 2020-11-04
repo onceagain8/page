@@ -34,15 +34,11 @@ def resultlist():
     match_val={}
     for it in d:
         match_val[it]=getmatchval(d[it]['ArticleTitle'],s)
-    if(not match_val):
-        return '<h1>404</h1>'
     ans=0
     for it in d:
-        if(match_val[it] != len(s)):
+        if(match_val[it] != len(s) or len(s)==0):
             continue
         ans = ans + 1
-    if(ans == 0):
-        return '<h1>sorry,file not found</h1>'
     return render_template('resultlist.html',match_val=match_val,d=d,date_file=date_file,Len=len(s),s=s,ans=ans)
 
 @app.route('/game/2048')
