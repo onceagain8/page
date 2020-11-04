@@ -44,8 +44,16 @@ def resultlist():
 @app.route('/game/2048')
 def game_2048():
     return render_template('/game/2048.html')
-
+@app.route('/game/snake')
+def game_snake():
+    return render_template('/game/snake.html')
 @app.route('/game')
 def game():
     return render_template('game.html')
+@app.route('/gov')
+def gov():
+    return render_template('gov.html')
+@app.route('/cpy')
+def cpy():
+    return render_template('cpy.html')
     
