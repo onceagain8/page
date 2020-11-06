@@ -46,13 +46,13 @@
 			<center> 
 				<ul>
 				<li><a href="/">首页</a></li>
-				<li><a href="/templates/cpy">企业视图</a></li>
-				<li><a href="/templates/gov">政府视图</a></li>
+				<li><a href="{{url_for('cpy')}}">企业视图</a></li>
+				<li><a href="{{url_for('gov')}}">政府视图</a></li>
 				<li>
-					<a href="/templates/game">小游戏</a>
+					<a href="{{url_for('game')}}">小游戏</a>
 					<ul>
-						<li><a href="/templates/game/2048">2048</a></li>
-						<li><a href="/templates/game/snake">贪吃蛇</a></li>
+						<li><a href="{{url_for('game_2048')}}">2048</a></li>
+						<li><a href="{{url_for('game_snake')}}">贪吃蛇</a></li>
 					</ul>
 				</li>
 				</ul>
