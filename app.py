@@ -19,9 +19,6 @@ db = SQLAlchemy(app)
 
 
 
-@app.route('/login')
-def login():
-    pass
 
 @app.route('/')
 def index(): 
@@ -73,4 +70,7 @@ def gov():
 @app.route('/cpy')
 def cpy():
     return render_template('cpy.html')
+@app.route('/login')
+def login():
+    return render_template('login.html')
     
