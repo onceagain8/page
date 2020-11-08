@@ -6,7 +6,17 @@
         <link href="static/css/style.css" rel="stylesheet" >
         <link href="static/css/main.css"  rel="stylesheet">
 		<style>
-
+            .footer{
+                height:100%;
+                width: 100%;
+                background-color:rgba(255, 255, 255, 0);
+                height:1%;
+                text-align: center;
+                border:none;
+                position:absolute;
+                bottom: 0;
+                margin-top: 100px;
+            }
             .rightQuery {
                 top: 10%; 
                 left: 10%;
@@ -17,12 +27,13 @@
             }
             .list{
                 display: block;
-                border: 5px solid #689adb;
                 margin-top: 10px;
                 left: 100px;
                 right:100px;
                 height: 80px;
-                background-color: #7bb9cc
+                border:none;
+                border-radius: 5px 5px 5px 5px;
+                background-color: rgba(255,255,255,0.5);
             }
             .list a{
                 font-weight: 900;
@@ -33,7 +44,7 @@
 				margin: 0;
 				padding: 0;
 				font-weight: 500;
-				background-color: #7BA7AB;
+				background: url("/static/image/login/demo-1-bg.jpg");
 				font-family: "Microsoft YaHei","Microsoft YaHei","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
             }
             .black{
@@ -71,10 +82,11 @@
                         <a href="{{url_for('game_snake')}}">贪吃蛇</a>
                     </p>
                 </div>
-                <div class="black">
-                    <img src="static/image/index.png" height="auto" width="100%">
-                </div>
         </div>
-
+		<div class="footer">
+			<p style="font-weight: 900;font-size: 20px;color: white;">
+			powered by TJU502
+			</p>
+		</div>
 	</body>
 </html>

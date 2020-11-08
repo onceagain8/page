@@ -8,13 +8,7 @@
 		<link href="static/css/style.css" rel="stylesheet" >
 		<link href="static/css/main.css" rel = stylesheet >
 		<style>
-			body {
-				margin: 0;
-				padding: 0;
-				font-weight: 500;
-				background-color: #7BA7AB;
-				font-family: "Microsoft YaHei","宋体","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
-			}
+
 
 			button {
 				outline: none;
@@ -37,8 +31,11 @@
 			}
 			.header{
 				height: auto;
-				min-height: 300px;
-				padding-top: 50px;
+				min-height: 200px;
+				padding-top: 100px;
+				font-size:60px;
+				font-family:"楷体";
+				color:#FFFFFE
 				/* background-color: #7BA7AB; */
 			}
 			.content{
@@ -55,12 +52,11 @@
 			}
 			.logo{
 				/*background-color:skyblue;*/
-				height:auto;
 				width:auto;
-				min-width:300px;
-				max-width:400px;
-				min-height: 300px;
-				max-width: 400px;
+				min-width:200px;
+				max-width:300px;
+				min-height: 200px;
+				max-height: 300px;
 			}
 			input {
 				border: none;
@@ -79,7 +75,7 @@
 				position: relative;
 			}
 			/* 搜索框1*/
-			.bar {background: #7BA7AB;}
+			/* .bar {background: #7BA7AB;} */
 			.bar input {
 				border: 2px solid #7BA7AB;
 				border-radius: 5px;
@@ -87,8 +83,8 @@
 				color: #9E9C9C;
 			}
 			.bar button {
-				top: 2.5px;
-				right: 10px;
+				top: 1px;
+				right: 9px;
 				background: #7BA7AB;
 				border-radius: 0 5px 5px 0;
 			}
@@ -98,53 +94,75 @@
 				font-size: 16px; 
 				color: #F9F0DA;
 			}
+			body,html{
+				height: 100%;
+			}
 			body {
 				margin: 0;
 				padding: 0;
 				font-weight: 500;
-				background-color: #7BA7AB;
+				background: url('/static/image/login/demo-1-bg.jpg');
+				/* background-color: #7BA7AB; */
 				font-family: "Microsoft YaHei","宋体","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
 			}
+            .footer{
+                height:10%;
+                width: 100%;
+				background-color:rgba(255, 255, 255, 0);
+                text-align: center;
+				border:none;
+				position:absolute;
+				margin-top: 0%;
+			}
+
 	</style>
 	</head>
 	<body>
+
 		<div class="top">
 			<center> 
 				<ul>
-				<li><a href="/">首页</a></li>
-				<li><a href="{{url_for('cpy')}}">企业视图</a></li>
-				<li><a href="{{url_for('gov')}}">政府视图</a></li>
-				<li>
-					<a href="{{url_for('game')}}">小游戏</a>
-					<ul>
-						<li><a href="{{url_for('game_2048')}}">2048</a></li>
-						<li><a href="{{url_for('game_snake')}}">贪吃蛇</a></li>
-					</ul>
-				</li>
+					<li><a href="/">首页</a></li>
+					<li><a href="{{url_for('cpy')}}">企业视图</a></li>
+					<li><a href="{{url_for('gov')}}">政府视图</a></li>
+					<li>
+						<a href="{{url_for('game')}}">小游戏</a>
+						<ul>
+							<li><a href="{{url_for('game_2048')}}">2048</a></li>
+							<li><a href="{{url_for('game_snake')}}">贪吃蛇</a></li>
+						</ul>
+					</li>
+					<li style="float:right"><a href="{{url_for('login')}}">登录</a></li>
 				</ul>
-			</center>        
+			</center>
 		</div>
+		<div class="large-header">
+			<!-- <canvas id="demo-canvas"></canvas> -->
 		<div class="header">
 			<div>
 				<img src="/static/image/tju.png" alt="" class="logo">
 			</div>
+			<p>
+				招标、中标文档结构化分析平台
+			</p>
 		</div>
 		<div class="content">
-			<div>
-				<select>
-					<option value ="项目名称">项目名称</option>
-					<option value ="投标公司">投标公司</option>
-				</select>
-			</div>
 			<div class="search bar">
 				<form action="resultlist" method="post">
-					<input type="text" name="search" placeholder="请输入您要搜索的项目代码..." >
+					<input type="text" name="search" placeholder="请输入您要搜索的项目..." >
 					<button type="submit"></button>
 				</form>
 			</div>
 		</div>
-		<div class="black">
-			<img src="static/image/index.png" height="auto" width="100%">
+		<div style="margin-top: 0%;">
+			<p style="font-weight: 900;font-size: 20px;color: white;">
+			powered by TJU502
+			</p>
 		</div>
+		</div>
+		<script src="/static/js/login/TweenLite.min.js"></script>
+		<script src="/static/js/login/EasePack.min.js"></script>
+		<script src="/static/js/login/rAF.js"></script>
+		<script src="/static/js/login/demo-1.js"></script>
 	</body>
 </html>

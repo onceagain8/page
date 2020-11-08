@@ -1,6 +1,7 @@
+
 .top{
     /* 设置宽度高度背景颜色 */
-    height: auto; /*高度改为自动高度*/
+    height: 50px; /*高度改为自动高度*/
     width:100%;
     margin-left: 0;
     background:rgb(189, 181, 181);
@@ -63,7 +64,8 @@ body {
     margin: 0;
     padding: 0;
     font-weight: 500;
-    background-color: #7BA7AB;
+    background: url('../image/login/demo-1-bg.jpg');
+    /* background-color: #7BA7AB; */
     font-family: "Microsoft YaHei","宋体","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
 }
 
@@ -82,4 +84,3 @@ input {
     height: 42px;
     padding-left: 13px;
 }
-
