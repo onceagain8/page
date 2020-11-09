@@ -46,6 +46,10 @@ def resultlist():
         ans = ans + 1
     return render_template('resultlist.html',match_val=match_val,d=d,date_file=date_file,Len=len(s),s=s,ans=ans)
 
+@app.route('/find/<json_id>')
+def find(json_id):
+    return json_id
+
 @app.route('/game/2048')
 def game_2048():
     return render_template('/game/2048.html')
