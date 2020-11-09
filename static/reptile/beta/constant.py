@@ -22,7 +22,7 @@ page_contains = ['SiteName','SiteDomain','SiteIDCode','ColumnName','ArticleTitle
 pa_contains = ['url','l','r']
 
 def sleep_time_f():
-    return 3+(random.random()-0.5)*1
+    return 2+(random.random()-0.5)*1
 
 def turn_page_on(url,x) :
     return url.rsplit('&',1)[0]+'&page='+str(x)
