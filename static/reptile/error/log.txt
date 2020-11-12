@@ -1076,3 +1076,43 @@ Traceback (most recent call last):
 requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
 
 
+==================================================
+Error atWed Nov 11 21:57:52 2020
+Traceback (most recent call last):
+  File "main.py", line 17, in <module>
+    with open('./beta/采购网目录.txt','r',encoding='utf-8') as fin:
+FileNotFoundError: [Errno 2] No such file or directory: './beta/采购网目录.txt'
+
+
+==================================================
+Error atWed Nov 11 23:39:33 2020
+Traceback (most recent call last):
+  File "main.py", line 22, in <module>
+    GrabPages.grab(最上级网址,备注,l=1000)
+  File "/mnt/lun1/home/shs/page/static/reptile/beta/GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "/mnt/lun1/home/shs/page/static/reptile/beta/GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "/mnt/lun1/home/shs/page/static/reptile/beta/GrabSignlePage.py", line 55, in grab
+    content = get_content(file)
+  File "/mnt/lun1/home/shs/page/static/reptile/beta/GrabSignlePage.py", line 22, in get_content
+    return now.prettify()
+AttributeError: 'NoneType' object has no attribute 'prettify'
+
+
+==================================================
+Error atThu Nov 12 05:52:58 2020
+Traceback (most recent call last):
+  File "main.py", line 22, in <module>
+    GrabPages.grab(最上级网址,备注,l=1000)
+  File "/mnt/lun1/home/shs/page/static/reptile/beta/GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "/mnt/lun1/home/shs/page/static/reptile/beta/GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "/mnt/lun1/home/shs/page/static/reptile/beta/GrabSignlePage.py", line 55, in grab
+    content = get_content(file)
+  File "/mnt/lun1/home/shs/page/static/reptile/beta/GrabSignlePage.py", line 22, in get_content
+    return now.prettify()
+AttributeError: 'NoneType' object has no attribute 'prettify'
+
+

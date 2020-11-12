@@ -14,7 +14,7 @@ if 0:
 if __name__ == "__main__":
 #    print(con.initial_Dir)
     try:
-        with open('./beta/采购网目录.txt','r',encoding='utf-8') as fin:
+        with open('../beta/采购网目录.txt','r',encoding='utf-8') as fin:
             网页目录 = fin.readlines()
         for line in 网页目录:
             最上级网址,备注 = line.split()

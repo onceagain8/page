@@ -1,5 +1,5 @@
-http://ccgp-tianjin.gov.cn/portal/topicView.do?method=view&view=Infor&id=1665&ver=2&st=1 采购公告-市级
 http://ccgp-tianjin.gov.cn/portal/topicView.do?method=view&view=Infor&id=1664&ver=2 采购公告-区级
+http://ccgp-tianjin.gov.cn/portal/topicView.do?method=view&view=Infor&id=1665&ver=2&st=1 采购公告-市级
 
 http://ccgp-tianjin.gov.cn/portal/topicView.do?method=view&view=Infor&id=1663&ver=2&st=1 更正公告-市级
 http://ccgp-tianjin.gov.cn/portal/topicView.do?method=view&view=Infor&id=1666&ver=2 更正公告-区级
