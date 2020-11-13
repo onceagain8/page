@@ -1077,6 +1077,7 @@ requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected(
 
 
 ==================================================
+<<<<<<< HEAD
 Error atWed Nov 11 21:25:27 2020
 Traceback (most recent call last):
   File "C:\Users\Ê©ºÆÉ­\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
@@ -1222,11 +1223,33 @@ Traceback (most recent call last):
   File "d:\ÎÄ¼þ\´óÈýÉÏ\ÏîÄ¿ÖÆÊµ¼ù\page20201103\static\reptile\beta\GrabSignlePage.py", line 55, in grab
     content = get_content(file)
   File "d:\ÎÄ¼þ\´óÈýÉÏ\ÏîÄ¿ÖÆÊµ¼ù\page20201103\static\reptile\beta\GrabSignlePage.py", line 22, in get_content
+=======
+Error atWed Nov 11 21:57:52 2020
+Traceback (most recent call last):
+  File "main.py", line 17, in <module>
+    with open('./beta/é‡‡è´­ç½‘ç›®å½•.txt','r',encoding='utf-8') as fin:
+FileNotFoundError: [Errno 2] No such file or directory: './beta/é‡‡è´­ç½‘ç›®å½•.txt'
+
+
+==================================================
+Error atWed Nov 11 23:39:33 2020
+Traceback (most recent call last):
+  File "main.py", line 22, in <module>
+    GrabPages.grab(æœ€ä¸Šçº§ç½‘å€,å¤‡æ³¨,l=1000)
+  File "/mnt/lun1/home/shs/page/static/reptile/beta/GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "/mnt/lun1/home/shs/page/static/reptile/beta/GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "/mnt/lun1/home/shs/page/static/reptile/beta/GrabSignlePage.py", line 55, in grab
+    content = get_content(file)
+  File "/mnt/lun1/home/shs/page/static/reptile/beta/GrabSignlePage.py", line 22, in get_content
+>>>>>>> b1dbbb8eef60bfdd41d32e4583c68a51064294e0
     return now.prettify()
 AttributeError: 'NoneType' object has no attribute 'prettify'
 
 
 ==================================================
+<<<<<<< HEAD
 Error atThu Nov 12 13:58:10 2020
 Traceback (most recent call last):
   File "d:\ÎÄ¼þ\´óÈýÉÏ\ÏîÄ¿ÖÆÊµ¼ù\page20201103\static\reptile\beta\main.py", line 22, in <module>
@@ -1238,10 +1261,24 @@ Traceback (most recent call last):
   File "d:\ÎÄ¼þ\´óÈýÉÏ\ÏîÄ¿ÖÆÊµ¼ù\page20201103\static\reptile\beta\GrabSignlePage.py", line 55, in grab
     content = get_content(file)
   File "d:\ÎÄ¼þ\´óÈýÉÏ\ÏîÄ¿ÖÆÊµ¼ù\page20201103\static\reptile\beta\GrabSignlePage.py", line 22, in get_content
+=======
+Error atThu Nov 12 05:52:58 2020
+Traceback (most recent call last):
+  File "main.py", line 22, in <module>
+    GrabPages.grab(æœ€ä¸Šçº§ç½‘å€,å¤‡æ³¨,l=1000)
+  File "/mnt/lun1/home/shs/page/static/reptile/beta/GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "/mnt/lun1/home/shs/page/static/reptile/beta/GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "/mnt/lun1/home/shs/page/static/reptile/beta/GrabSignlePage.py", line 55, in grab
+    content = get_content(file)
+  File "/mnt/lun1/home/shs/page/static/reptile/beta/GrabSignlePage.py", line 22, in get_content
+>>>>>>> b1dbbb8eef60bfdd41d32e4583c68a51064294e0
     return now.prettify()
 AttributeError: 'NoneType' object has no attribute 'prettify'
 
 
+<<<<<<< HEAD
 ==================================================
 Error atThu Nov 12 19:44:06 2020
 Traceback (most recent call last):
@@ -1444,3 +1481,5 @@ Traceback (most recent call last):
 requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'Ô¶³ÌÖ÷»úÇ¿ÆÈ¹Ø±ÕÁËÒ»¸öÏÖÓÐµÄÁ¬½Ó¡£', None, 10054, None))
 
 
+=======
+>>>>>>> b1dbbb8eef60bfdd41d32e4583c68a51064294e0

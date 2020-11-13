@@ -5,7 +5,7 @@ TimeLimit = 2000
 
 version=1.0
 
-local_Dir=os.getcwd()
+local_Dir='/mnt/lun1/home/shs/page/static/reptile'
 
 top_dir='''http://www.ccgp-tianjin.gov.cn/'''
 
