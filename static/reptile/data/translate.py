@@ -25,7 +25,7 @@ def get_json(file_path):
     return ret
 
 def find_project_id(file):
-    return file.find_all('div',attrs={'class':'segement','class':'line'})
+    return file.find_all('div',attrs={'class':{'segement','line'}})
 def find_project_name(file):
     return file.find_all('div',attrs={'class':'line'})
 def count_wining_source(file):
@@ -38,7 +38,7 @@ def count_wining_source(file):
     return ans
 
 if __name__ == "__main__":
-    file_path = os.getcwd()+"/data/js_table.json"
+    file_path = "./static/reptile/data/js_table.json"
     print(file_path)
     with open(file_path,"r",encoding='utf-8') as f:
         json_file = json.load(f)
@@ -55,7 +55,7 @@ if __name__ == "__main__":
     #     del json_file[id]
     # with open("js_table.json","w") as f:  
     #     json.dump(json_file,f,indent=4)      
-        html_path=os.getcwd()+"/data/page/"+id+"/content.html"
+        html_path="./static/reptile/data/page/"+id+"/content.html"
         # print(html_path)
         with open(html_path,"r",encoding="utf-8") as f:
             html_content=f.read();
@@ -66,9 +66,9 @@ if __name__ == "__main__":
         f.close()
         # print(bs_xml)
         bags = count_wining_source(bs_xml)
-        # print("bags=",bags)
+        print("bags=",bags)
         project_id = find_project_id(bs_xml)
-        # print("project_id=",project_id)
+        print("project_id=",project_id)
         project_name = find_project_name(bs_xml) 
         # print("project_name=",project_name)         
         break
