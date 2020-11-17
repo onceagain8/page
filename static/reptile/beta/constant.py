@@ -1,12 +1,12 @@
 import os
 import random
 
-TimeLimit = 2000
+TimeLimit = 200000
 
 version=1.0
 
-local_Dir='/mnt/lun1/home/shs/page/static/reptile'
-
+local_Dir=os.getcwd()
+print(local_Dir)
 top_dir='''http://www.ccgp-tianjin.gov.cn/'''
 
 initial_Dir='''http://www.ccgp-tianjin.gov.cn/portal/topicView.do?id=1662'''
@@ -22,7 +22,7 @@ page_contains = ['SiteName','SiteDomain','SiteIDCode','ColumnName','ArticleTitle
 pa_contains = ['url','l','r']
 
 def sleep_time_f():
-    return 3+(random.random()-0.5)*1
+    return 5+(random.random()-0.5)*1
 
 def turn_page_on(url,x) :
     return url.rsplit('&',1)[0]+'&page='+str(x)

@@ -1483,3 +1483,486 @@ requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetErro
 
 =======
 >>>>>>> b1dbbb8eef60bfdd41d32e4583c68a51064294e0
+==================================================
+Error atSat Nov 14 06:26:10 2020
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\main.py", line 22, in <module>
+    GrabPages.grab(最上级网址,备注,l=2000)
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabSignlePage.py", line 55, in grab
+    content = get_content(file)
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabSignlePage.py", line 22, in get_content
+    return now.prettify()
+AttributeError: 'NoneType' object has no attribute 'prettify'
+
+
+==================================================
+Error atMon Nov 16 18:18:15 2020
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1230, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1276, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1225, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1004, in _send_output
+    self.send(msg)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 944, in send
+    self.connect()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000024748600D90>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 724, in urlopen
+    retries = retries.increment(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='ccgp-tianjin.gov.cn', port=80): Max retries exceeded with url: /portal/topicView.do?method=view&view=Infor&id=1665&ver=2&st=1&page=2223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000024748600D90>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\main.py", line 22, in <module>
+    GrabPages.grab(最上级网址,备注,l=2200)
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabPages.py", line 41, in grab
+    file = requests.get(url,headers=con.init_header,timeout=con.TimeLimit)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='ccgp-tianjin.gov.cn', port=80): Max retries exceeded with url: /portal/topicView.do?method=view&view=Infor&id=1665&ver=2&st=1&page=2223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000024748600D90>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+
+==================================================
+Error atMon Nov 16 18:57:49 2020
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 426, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 421, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 272, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 724, in urlopen
+    retries = retries.increment(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 403, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\packages\six.py", line 734, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 426, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 421, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 272, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\main.py", line 22, in <module>
+    GrabPages.grab(最上级网址,备注,l=2222)
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabSignlePage.py", line 48, in grab
+    file = requests.get(url,headers=con.init_header,verify=False)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+
+==================================================
+Error atMon Nov 16 19:48:20 2020
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\connection.py", line 61, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1230, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1276, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1225, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1004, in _send_output
+    self.send(msg)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 944, in send
+    self.connect()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001FE534E1EE0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 724, in urlopen
+    retries = retries.increment(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='www.ccgp-tianjin.gov.cn', port=80): Max retries exceeded with url: /viewer.do?id=21522729&amp;ver=2 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001FE534E1EE0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\main.py", line 22, in <module>
+    GrabPages.grab(最上级网址,备注,l=2233)
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabSignlePage.py", line 48, in grab
+    file = requests.get(url,headers=con.init_header,verify=False)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='www.ccgp-tianjin.gov.cn', port=80): Max retries exceeded with url: /viewer.do?id=21522729&amp;ver=2 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001FE534E1EE0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+
+==================================================
+Error atMon Nov 16 22:21:01 2020
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\response.py", line 437, in _error_catcher
+    yield
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\response.py", line 767, in read_chunked
+    chunk = self._handle_chunk(amt)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\response.py", line 721, in _handle_chunk
+    self._fp._safe_read(2)  # Toss the CRLF at the end of the chunk.
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 608, in _safe_read
+    data = self.fp.read(amt)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\models.py", line 751, in generate
+    for chunk in self.raw.stream(chunk_size, decode_content=True):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\response.py", line 572, in stream
+    for line in self.read_chunked(amt, decode_content=decode_content):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\response.py", line 793, in read_chunked
+    self._original_response.close()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\response.py", line 455, in _error_catcher
+    raise ProtocolError("Connection broken: %r" % e, e)
+urllib3.exceptions.ProtocolError: ("Connection broken: ConnectionAbortedError(10053, '你的主机中的软件中止了一个已建立的连接。', None, 10053, None)", ConnectionAbortedError(10053, '你的主机中的软件中止了一个已建立的连接。', None, 10053, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\main.py", line 22, in <module>
+    GrabPages.grab(最上级网址,备注,l=2268)
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabSignlePage.py", line 48, in grab
+    file = requests.get(url,headers=con.init_header,verify=False)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 665, in send
+    history = [resp for resp in gen] if allow_redirects else []
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 665, in <listcomp>
+    history = [resp for resp in gen] if allow_redirects else []
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 237, in resolve_redirects
+    resp = self.send(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 683, in send
+    r.content
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\models.py", line 829, in content
+    self._content = b''.join(self.iter_content(CONTENT_CHUNK_SIZE)) or b''
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\models.py", line 754, in generate
+    raise ChunkedEncodingError(e)
+requests.exceptions.ChunkedEncodingError: ("Connection broken: ConnectionAbortedError(10053, '你的主机中的软件中止了一个已建立的连接。', None, 10053, None)", ConnectionAbortedError(10053, '你的主机中的软件中止了一个已建立的连接。', None, 10053, None))
+
+
+==================================================
+Error atMon Nov 16 22:57:58 2020
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\connection.py", line 61, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1230, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1276, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1225, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1004, in _send_output
+    self.send(msg)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 944, in send
+    self.connect()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000002771672D850>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 724, in urlopen
+    retries = retries.increment(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='www.ccgp-tianjin.gov.cn', port=80): Max retries exceeded with url: /viewer.do?id=15973901&amp;ver=2 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002771672D850>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\main.py", line 22, in <module>
+    GrabPages.grab(最上级网址,备注,l=2368)
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabSignlePage.py", line 48, in grab
+    file = requests.get(url,headers=con.init_header,verify=False)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='www.ccgp-tianjin.gov.cn', port=80): Max retries exceeded with url: /viewer.do?id=15973901&amp;ver=2 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002771672D850>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+
+==================================================
+Error atMon Nov 16 22:58:05 2020
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\connection.py", line 61, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1230, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1276, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1225, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1004, in _send_output
+    self.send(msg)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 944, in send
+    self.connect()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001D91C71E580>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 724, in urlopen
+    retries = retries.increment(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='ccgp-tianjin.gov.cn', port=80): Max retries exceeded with url: /portal/topicView.do?method=view&view=Infor&id=1665&ver=2&st=1 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D91C71E580>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\main.py", line 22, in <module>
+    GrabPages.grab(最上级网址,备注,l=2368)
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabPages.py", line 22, in grab
+    file=requests.get(url,headers=con.init_header,timeout=con.TimeLimit)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='ccgp-tianjin.gov.cn', port=80): Max retries exceeded with url: /portal/topicView.do?method=view&view=Infor&id=1665&ver=2&st=1 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D91C71E580>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+
+==================================================
+Error atTue Nov 17 01:48:21 2020
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1230, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1276, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1225, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1004, in _send_output
+    self.send(msg)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 944, in send
+    self.connect()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000029C8635E940>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 724, in urlopen
+    retries = retries.increment(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='www.ccgp-tianjin.gov.cn', port=80): Max retries exceeded with url: /viewer.do?id=92089292&amp;ver=2 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029C8635E940>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\main.py", line 22, in <module>
+    GrabPages.grab(最上级网址,备注,l=2402)
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "d:\文件\大三上\项目制实践\page20201103\static\reptile\beta\GrabSignlePage.py", line 48, in grab
+    file = requests.get(url,headers=con.init_header,verify=False)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='www.ccgp-tianjin.gov.cn', port=80): Max retries exceeded with url: /viewer.do?id=92089292&amp;ver=2 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000029C8635E940>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+
+
