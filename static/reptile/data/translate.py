@@ -26,8 +26,6 @@ def get_json(file_path):
 
 def find_project_id(file):
     return file.find_all('div',attrs={'class':{'segement','line'}})
-def find_project_name(file):
-    return file.find_all('div',attrs={'class':'line'})
 def count_wining_source(file):
     now = file.find('table',attrs={'id':'projectBundleList'})
     now = now.find_all('tr',attrs={'class':False})
@@ -69,6 +67,5 @@ if __name__ == "__main__":
         print("bags=",bags)
         project_id = find_project_id(bs_xml)
         print("project_id=",project_id)
-        project_name = find_project_name(bs_xml) 
         # print("project_name=",project_name)         
         break
