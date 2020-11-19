@@ -46,10 +46,18 @@ def resultlist():
         ans = ans + 1
     return render_template('resultlist.html',match_val=match_val,d=d,date_file=date_file,Len=len(s),s=s,ans=ans)
 
-@app.route('/find/<json_id>')
+@app.route('/api/<json_id>')
 def find(json_id):
-    return json_id
+    if (os.path.exists('/static/reptile/data/page/'+json_id+'/main.json')):
+        dic = {}
+        with open('/static/reptile/data/page/'+json_id+'/main.json',"r",encoding="utf-8")as f:
+            dic=json.load(f)
+        return render_template('show.html',dic=dic)
+    return json_id+" has not been created"
 
+
+
+# 导航栏
 @app.route('/game/2048')
 def game_2048():
     return render_template('/game/2048.html')

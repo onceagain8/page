@@ -1,2 +1,0 @@
-nohup: 忽略输入
-/usr/bin/python3: Error while finding module specification for 'main.py' (ModuleNotFoundError: No module named 'main')
