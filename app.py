@@ -78,6 +78,7 @@ def find(json_id):
         dic = {}
         with open('/static/reptile/data/page/'+json_id+'/main.json',"r",encoding="utf-8")as f:
             dic=json.load(f)
+        f.close()
         return render_template('show.html',dic=dic)
     return '/static/reptile/data/page/'+json_id+'/content.html'
 
