@@ -1,6 +1,8 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask import jsonify
+# from flask_pageinate import Pageination,get_page_parameter
 import os
 import json
 import sys
@@ -28,23 +30,47 @@ def getmatchval(s1,s2):
     # print('ret = %d'%ret)
     return ret
 
-@app.route('/resultlist',methods=['post'])
+# @app.route('/resultlist',methods=['post'])
+# def resultlist():
+
+#     s=request.form.get('search')
+#     print(s)
+#     print('len = %d'%len(s))
+#     f = open('.'+date_file+'data/js_table.json','r') 
+#     d = json.load(f)
+#     f.close()
+#     match_val={}
+#     for it in d:
+#         match_val[it]=getmatchval(d[it]['ArticleTitle'],s)
+#     ans=0
+#     for it in d:
+#         if(match_val[it] != len(s) or len(s)==0):
+#             continue
+#         ans = ans + 1
+#     print("finished find")
+#     return render_template('resultlist.html',match_val=match_val,d=d,date_file=date_file,Len=len(s),s=s,ans=ans)
+@app.route('/resultlist',methods=['GET','POST'])
 def resultlist():
     s=request.form.get('search')
+    return render_template('resultlist.html',s=s)
+
+@app.route('/api/resultlist/<s>')
+def apiresultlist(s):
     print(s)
     print('len = %d'%len(s))
     f = open('.'+date_file+'data/js_table.json','r') 
     d = json.load(f)
     f.close()
-    match_val={}
-    for it in d:
-        match_val[it]=getmatchval(d[it]['ArticleTitle'],s)
     ans=0
+    resultlist={}
     for it in d:
-        if(match_val[it] != len(s) or len(s)==0):
-            continue
-        ans = ans + 1
-    return render_template('resultlist.html',match_val=match_val,d=d,date_file=date_file,Len=len(s),s=s,ans=ans)
+        if(s in d[it]['ArticleTitle']):
+            resultlist[str(ans)]=(it,d[it]['ArticleTitle'])
+            ans = ans + 1
+    resultlist["total"] = ans;
+    print("finished find")
+    return jsonify(resultlist);
+
 
 @app.route('/api/<json_id>')
 def find(json_id):
@@ -53,7 +79,7 @@ def find(json_id):
         with open('/static/reptile/data/page/'+json_id+'/main.json',"r",encoding="utf-8")as f:
             dic=json.load(f)
         return render_template('show.html',dic=dic)
-    return json_id+" has not been created"
+    return '/static/reptile/data/page/'+json_id+'/content.html'
 
 
 
@@ -79,4 +105,4 @@ def login():
 
 
 if __name__=="__main__":
-    app.run(port="8080",host="0.0.0.0")
+    app.run(port="12000",host="0.0.0.0",debug=True)

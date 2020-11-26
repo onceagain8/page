@@ -3,55 +3,79 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>demo</title>
-        <link href="static/css/style.css" rel="stylesheet" >
-        <link href="static/css/main.css"  rel="stylesheet">
+		<link href="static/css/style.css" rel="stylesheet" >
+		<link href="static/css/main.css"  rel="stylesheet">
+		
+		
 		<style>
 
-            .rightQuery {
-                top: 10%; 
-                left: 10%;
-                height: auto;
-                width: 80%;
-                position:absolute;
-                
-            }
-            .list{
-                display: block;
-                margin-top: 10px;
-                left: 100px;
-                right:100px;
-                height: 80px;
-                border:none;
-                border-radius: 5px 5px 5px 5px;
-                background-color: rgba(255,255,255,0.5);
-            }
-            .list a{
-                font-weight: 900;
-                font-size:20px;
-                
-            }
-            body,html{
+			.rightQuery {
+				margin-top: 10%; 
+				margin-left: 10%;
+				height: auto;
+				width: 80%;
+			}
+			.list{
+				display: block;
+				margin-top: 10px;
+				left: 100px;
+				right:100px;
+				min-height: 40px;
+				border:none;
+				border-radius: 5px 5px 5px 5px;
+				background-color: rgba(255,255,255,0.5);
+			}
+			.list a{
+				font-weight: 900;
+				font-size:18px;
+				text-decoration: none;
+				color:white;
+				
+			}
+			.paging{
+				display: flex;
+				align-items: center;
+				margin-left: 10%;
+				margin-right: 10%;
+			}
+			.paging div{
+				border: 1px solid rgb(211, 211, 211);
+				border-style:double;
+				padding: 10px;
+				border-radius: 10px;
+				cursor: pointer;
+				margin: 0 10px;
+				font-size: 14px;
+				font-weight: 800;
+			}
+			.paging div.disable{
+				color: #fff;
+				cursor: not-allowed;
+				background-color: rgb(211, 211, 211);
+			}
+			.paging div.active{
+				border: none;
+				background-color: rgb(78, 216, 250);
+				color: #fff;
+			}
+			body,html{
 				height: 100%;
 			}
-            body {
+			body {
 				margin: 0;
 				padding: 0;
-                font-weight: 500;
-                background: url('/static/image/login/demo-1-bg.jpg');
+				font-weight: 500;
+				background: url('/static/image/login/demo-1-bg.jpg');
 				font-family: "Microsoft YaHei","Microsoft YaHei","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
-            }
-            .footer{
-				background-color:rgba(255, 255, 255, 0);
-                text-align: center;
-				border:none;
-				position:absolute;
-				bottom: 0;
-				margin-top: 0%;
 			}
-            .black{
-                margin-top:100px;
-            }
-	    </style>
+			footer{
+				background-color:rgba(255, 255, 255, 0);
+				text-align: center;
+
+				margin-bottom:0px;
+				/* position:fixed; */
+			}
+		</style>
 	</head>
 	<body>
 		<div class="top">
@@ -69,33 +93,102 @@
 				</li>
 				</ul>
 			</center>      
-        </div>
+		</div>
 
-        <div class="rightQuery">
-            <h1>搜索结果:{{s}},搜索结果一共{{ans}}条</h1>
-            {% for it in d%}
-                {% if match_val[it] == Len and Len != 0%}
-                    <div class='list'>
-                        <p>
-                            <a href="/api/{{it}}">{{d[it]['ArticleTitle']}}</a>
-                        </p>
-                    </div>
-                {% endif %}
-            {% endfor %}
-            {% if ans > 6 %}
-            <div class="footer">
-                <p style="font-weight: 900;font-size: 20px;color: white;">
-                powered by TJU502
-                </p>
-            </div>
-            {% endif %}
-        </div>
-        {%if ans<=6%}
-        <div class="footer">
-            <p style="font-weight: 900;font-size: 20px;color: white;">
-            powered by TJU502
-            </p>
-        </div>
-        {%endif%}
+		<div class="rightQuery">
+			<h1 id=headline>搜索结果:None,搜索结果一共None条</h1>
+			<div id = "majorlist">
+				<div class='list'><p><a>None</a></p></div>
+				<div class='list'><p><a>None</a></p></div>
+				<div class='list'><p><a>None</a></p></div>
+				<div class='list'><p><a>None</a></p></div>
+				<div class='list'><p><a>None</a></p></div>
+				<div class='list'><p><a>None</a></p></div>
+				<div class='list'><p><a>None</a></p></div>
+			</div>
+		</div>
+		<div class="paging" id="paging">
+			<div class='first' onclick="clickpage(-3)">首页</div>
+			<div class='prev disabled' onclick="clickpage(-2)">上一页</div>
+			<div class='pagingDiv active' onclick="clickpage(1)">1</div>
+			<div class='pagingDiv' onclick="clickpage(2)">2</div>
+			<div class='pagingDiv' onclick="clickpage(3)">3</div>
+			<div class='pagingDiv' onclick="clickpage(4)">4</div>
+			<div class='pagingDiv' onclick="clickpage(5)">5</div>
+			<div class="next" onclick="clickpage(-1)">下一页</div>
+			<div class="last" onclick="clickpage(0)">尾页</div>
+		</div>
+		<footer>
+			<p style="font-weight: 900;font-size: 20px;color: white;">
+			powered by TJU502
+			</p>
+		</footer>
+		<script>
+			var xmlhttp;
+			var perpage=10;
+			var total=0,id=[],idname=[];
+			var mxpage=0;
+			function Init(){
+				mxpage=total/10+(total%10!=0);
+				headline=document.getElementById("headline");
+				headline.innerHTML="<h1 id=headline>搜索结果:{{s}},搜索结果一共"+total+"条</h1>";
+				
+				majorlist=document.getElementById("majorlist");
+				majorlist.innerHTML="";
+				// <div class='list'><p><a>None</a></p></div>
+				pagel = 0;
+				pager = perpage;
+				for(var i = 0;i < pager;i++){
+					majorlist.innerHTML+="<div class='list'><p><a href='/api/"+id[i].toString()+"'>"+idname[i]+"</a></p></div>\n";
+				}
+
+				paging=document.getElementById("paging");
+				paging.innerHTML="	<div class='first' onclick='clickpage(-3)'>首页</div>\n\
+									<div class='prev disabled' onclick='clickpage(-2)'>上一页</div>\n\
+									<div class='pagingDiv active' onclick='clickpage(1)'>1</div>\n";
+				var lim = Math.min(mxpage,5);
+				for(var line=2;line<=lim;line++){
+					paging.innerHTML+="<div class='pagingDiv' onclick='clickpage("+line.toString()+")'>"+line.toString()+"</div>\n"
+				}
+				paging.innerHTML +="<div class='next' onclick='clickpage(-1)'>下一页</div>\n\
+									<div class='last' onclick='clickpage(0)'>尾页</div>\n"
+
+			}
+			window.onload=function(){	
+				if (window.XMLHttpRequest){//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+					xmlhttp=new XMLHttpRequest();
+				}
+				else{// IE6, IE5 浏览器执行代码
+					xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				xmlhttp.onreadystatechange=function(){
+					if (xmlhttp.readyState==4 && xmlhttp.status==200)
+					{
+						console.log("{{s}}");
+						var dataset = JSON.parse(xmlhttp.response);
+						console.log(dataset);
+						for (line in dataset){
+							if(line == "total"){
+								total = dataset["total"];
+							}
+							else{
+								id[parseInt(line)]=dataset[line][0];
+								idname[parseInt(line)]=dataset[line][1];
+								console.log(dataset[line][1],idname[parseInt(line)]);
+							}
+						}
+						console.log(idname);
+						Init();
+					}
+				}
+				xmlhttp.open("GET","/api/resultlist/{{s}}",true);
+				xmlhttp.send();
+			}
+			
+			function clickpage(content){
+
+			}
+
+		</script>
 	</body>
 </html>
