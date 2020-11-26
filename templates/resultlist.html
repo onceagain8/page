@@ -39,7 +39,7 @@
 				margin-right: 10%;
 			}
 			.paging div{
-				border: 1px solid rgb(211, 211, 211);
+				border: 1px solid rgb(255, 251, 251);
 				border-style:double;
 				padding: 10px;
 				border-radius: 10px;
@@ -47,6 +47,7 @@
 				margin: 0 10px;
 				font-size: 14px;
 				font-weight: 800;
+				color:rgb(255,255,255);
 			}
 			.paging div.disable{
 				color: #fff;
@@ -128,30 +129,49 @@
 			var perpage=10;
 			var total=0,id=[],idname=[];
 			var mxpage=0;
-			function Init(){
-				mxpage=total/10+(total%10!=0);
-				headline=document.getElementById("headline");
-				headline.innerHTML="<h1 id=headline>搜索结果:{{s}},搜索结果一共"+total+"条</h1>";
-				
-				majorlist=document.getElementById("majorlist");
+			function buildpaging(content){
+				var majorlist=document.getElementById("majorlist");
 				majorlist.innerHTML="";
-				// <div class='list'><p><a>None</a></p></div>
-				pagel = 0;
-				pager = perpage;
-				for(var i = 0;i < pager;i++){
-					majorlist.innerHTML+="<div class='list'><p><a href='/api/"+id[i].toString()+"'>"+idname[i]+"</a></p></div>\n";
+				var pagel = (content-1)*perpage;
+				var pager = Math.min(pagel + perpage,total);	
+				for(var i = pagel;i < pager;i++){
+					majorlist.innerHTML += "<div class='list'><p><a href='/api/"+id[i].toString()+"'>"+idname[i]+"</a></p></div>\n";
 				}
 
-				paging=document.getElementById("paging");
-				paging.innerHTML="	<div class='first' onclick='clickpage(-3)'>首页</div>\n\
-									<div class='prev disabled' onclick='clickpage(-2)'>上一页</div>\n\
-									<div class='pagingDiv active' onclick='clickpage(1)'>1</div>\n";
-				var lim = Math.min(mxpage,5);
-				for(var line=2;line<=lim;line++){
-					paging.innerHTML+="<div class='pagingDiv' onclick='clickpage("+line.toString()+")'>"+line.toString()+"</div>\n"
+				var leftpage = Math.max(1,content-5);
+				var rightpage= Math.min(mxpage,Math.max(content+5,10));
+
+				if(rightpage-leftpage+1 < 11){
+					if(leftpage == 1)rightpage=Math.min(mxpage,leftpage+10);
+					else leftpage = Math.max(1,rightpage-10);
 				}
-				paging.innerHTML +="<div class='next' onclick='clickpage(-1)'>下一页</div>\n\
-									<div class='last' onclick='clickpage(0)'>尾页</div>\n"
+
+				var paging=document.getElementById("paging");
+				paging.innerHTML="	<div class='first' onclick='clickpage(-3)'>首页</div>\n";
+				
+				if(content == 1)paging.innerHTML += "<div class='prev disabled' onclick='clickpage(-2)'>上一页</div>\n";
+				else paging.innerHTML += "<div class='prev' onclick='clickpage(-2)'>上一页</div>\n";
+				
+				for(var line = leftpage;line<=rightpage;line++){
+					if(line == content){
+						console.log(line);
+						paging.innerHTML+="<div class='pagingDiv active' onclick='clickpage("+line.toString()+")'>"+line.toString()+"</div>\n"
+					}
+					else{
+						paging.innerHTML+="<div class='pagingDiv' onclick='clickpage("+line.toString()+")'>"+line.toString()+"</div>\n"
+					}
+				}
+
+				if(content != mxpage)paging.innerHTML +="<div class='next' onclick='clickpage(-1)'>下一页</div>\n"
+				else paging.innerHTML +="<div class='next disabled' onclick='clickpage(-1)'>下一页</div>\n"
+				paging.innerHTML +="<div class='last' onclick='clickpage(0)'>尾页</div>\n";
+			}
+			function Init(){
+				mxpage=parseInt(total/10)+(total%10!=0);
+				var headline=document.getElementById("headline");
+				headline.innerHTML="<h1 id=headline>搜索结果:{{s}},搜索结果一共"+total+"条</h1>";
+				
+				buildpaging(1);
 
 			}
 			window.onload=function(){	
@@ -174,10 +194,10 @@
 							else{
 								id[parseInt(line)]=dataset[line][0];
 								idname[parseInt(line)]=dataset[line][1];
-								console.log(dataset[line][1],idname[parseInt(line)]);
+								// console.log(dataset[line][1],idname[parseInt(line)]);
 							}
 						}
-						console.log(idname);
+						// console.log(idname);
 						Init();
 					}
 				}
@@ -186,7 +206,32 @@
 			}
 			
 			function clickpage(content){
-
+				console.log(content,typeof content);
+				nowp=parseInt(document.getElementsByClassName("active")[0].innerText);
+				console.log("nowp="+nowp,typeof nowp);
+				if(content>0){
+					buildpaging(content);
+				}
+				else if(content == -3){
+					buildpaging(1);
+				}
+				else if(content == 0){
+					buildpaging(mxpage);
+				}
+				else if(content == -2){
+					if(nowp == 1){
+						window.alert("已经是第一页了！");
+					}else{
+						buildpaging(nowp-1);
+					}
+				}
+				else{
+					if(nowp == mxpage){
+						window.alert("已经是第一页了！");
+					}else{
+						buildpaging(nowp+1);
+					}
+				}
 			}
 
 		</script>
