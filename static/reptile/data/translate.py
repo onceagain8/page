@@ -215,7 +215,6 @@ if __name__ == "__main__":
             print("Eror :"+json_id)
         else:
             print("finished:"+json_id)
-        # print(dic)
-        with open(base_path+"/page/"+json_id+"main.json","w",encoding='utf-8')as f:
-            json.dump(dic,f,ensure_ascii=False,indent=4)
-        f.close()
+            with open(base_path+"/page/"+json_id+"main.json","w",encoding='utf-8')as f:
+                json.dump(dic,f,ensure_ascii=False,indent=4)
+            f.close()
