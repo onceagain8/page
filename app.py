@@ -78,7 +78,7 @@ def show(pro_id):
 
 @app.route('/api/show/<json_id>')
 def find(json_id):
-    nowpath=os.path.dirname(os.path.abspath(__file__))+'\\static\\reptile\\data\page\\'+json_id+'\\main.json'
+    nowpath=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static','reptile','data','page', json_id, 'main.json')
     print(nowpath)
     if (os.path.exists(nowpath)):
         dic = {}
