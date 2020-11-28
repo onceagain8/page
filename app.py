@@ -67,20 +67,26 @@ def apiresultlist(s):
         if(s in d[it]['ArticleTitle']):
             resultlist[str(ans)]=(it,d[it]['ArticleTitle'])
             ans = ans + 1
-    resultlist["total"] = ans;
+    resultlist["total"] = ans
     print("finished find")
-    return jsonify(resultlist);
+    return jsonify(resultlist)
+
+@app.route('/show/<pro_id>')
+def show(pro_id):
+    return render_template('show.html',pro_id=pro_id)
 
 
-@app.route('/api/<json_id>')
+@app.route('/api/show/<json_id>')
 def find(json_id):
-    if (os.path.exists('/static/reptile/data/page/'+json_id+'/main.json')):
+    nowpath=os.path.dirname(os.path.abspath(__file__))+'\\static\\reptile\\data\page\\'+json_id+'\\main.json'
+    print(nowpath)
+    if (os.path.exists(nowpath)):
         dic = {}
-        with open('/static/reptile/data/page/'+json_id+'/main.json',"r",encoding="utf-8")as f:
+        with open(nowpath,"r",encoding="utf-8")as f:
             dic=json.load(f)
         f.close()
-        return render_template('show.html',dic=dic)
-    return '/static/reptile/data/page/'+json_id+'/content.html'
+        return jsonify(dic)
+    return '404'
 
 
 

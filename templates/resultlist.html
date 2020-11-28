@@ -135,7 +135,7 @@
 				var pagel = (content-1)*perpage;
 				var pager = Math.min(pagel + perpage,total);	
 				for(var i = pagel;i < pager;i++){
-					majorlist.innerHTML += "<div class='list'><p><a href='/api/"+id[i].toString()+"'>"+idname[i]+"</a></p></div>\n";
+					majorlist.innerHTML += "<div class='list'><p><a href='/show/"+id[i].toString()+"'>"+idname[i]+"</a></p></div>\n";
 				}
 
 				var leftpage = Math.max(1,content-5);
