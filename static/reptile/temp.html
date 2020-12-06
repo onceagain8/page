@@ -8,10 +8,10 @@
   <meta content="天津市政府采购网" name="SiteName"/>
   <meta content="12BM010004" name="SiteIDCode"/>
   <meta content="www.ccgp-tianjin.gov.cn" name="SiteDomain"/>
-  <meta content="采购公告—区级" name="ColumnName"/>
-  <meta content="采购公告—区县" name="ColumnDescription"/>
-  <meta content="采购公告—区县" name="ColumnKeywords"/>
-  <meta content="采购公告—区级" name="ColumnType"/>
+  <meta content="采购结果公告-市级" name="ColumnName"/>
+  <meta content="采购结果公告-市级" name="ColumnDescription"/>
+  <meta content="采购结果公告-市级" name="ColumnKeywords"/>
+  <meta content="采购结果公告-市级" name="ColumnType"/>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
   <meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
   <link href="/App_Themes/reset.css" rel="stylesheet" type="text/css"/>
@@ -21,57 +21,35 @@
   <script src="/javascript/jquery-3.3.1.mim.js" type="text/javascript">
   </script>
   <style type="text/css">
-   .tab_ul li {
-
-            float: left;
-
-            left: 20px;
-
-            bottom: 0;
-
-            min-width: 135px;
-
-            height: 44px;
-
-            border-left: 1px solid #efefef;
-
-            background-color: #fff;
-
-            color: #2386ff;
-
-            padding: 0 10px;
-
-            text-align: center;
-
-            line-height: 44px;
-
-        }
-
-
-
-        .rightAlign select {
-
-            border: none;
-
-            background-color: #efefef;
-
-        }
-
-
-
+   .tab_ul li {
+            float: left;
+            left: 20px;
+            bottom: 0;
+            min-width: 135px;
+            height: 44px;
+            border-left: 1px solid #efefef;
+            background-color: #fff;
+            color: #2386ff;
+            padding: 0 10px;
+            text-align: center;
+            line-height: 44px;
+        }
+
+        .rightAlign select {
+            border: none;
+            background-color: #efefef;
+        }
+
         }
   </style>
  </head>
  <body>
   <style>
-   .right_bar{ width:28px; height:95px; position:fixed; top:50%; right:0; margin-top:parseInt((browser.getWindow().height - 95) / 2 + browser.getScroll().height); z-index:9999;}
-
+   .right_bar{ width:28px; height:95px; position:fixed; top:50%; right:0; margin-top:parseInt((browser.getWindow().height - 95) / 2 + browser.getScroll().height); z-index:9999;}
 .right_bar img{cursor:pointer;}
   </style>
-  <!-- <div class="right_bar">
-
-	<img src="/images/right_bar.jpg" />
-
+  <!-- <div class="right_bar">
+	<img src="/images/right_bar.jpg" />
 </div> -->
   <div id="header">
    <div class="head layoutWidth">
@@ -91,36 +69,21 @@
       </div>
      </div>
      <script type="text/javascript">
-      $(
-
-							function() {
-
-								$("#searchSelect .title").bind("click",
-
-										function(event) {
-
-											$(this).next().toggle();
-
-											event.stopPropagation();
-
-										})
-
-
-
-								$("#searchSelect li").bind("click", function() {
-
-									var txt = $(this).text();
-
-									$("#searchSelect .title").text(txt);
-
-								})
-
-								$(document).bind("click", function() {
-
-									$("#searchSelect .showUl").hide();
-
-								})
-
+      $(
+							function() {
+								$("#searchSelect .title").bind("click",
+										function(event) {
+											$(this).next().toggle();
+											event.stopPropagation();
+										})
+
+								$("#searchSelect li").bind("click", function() {
+									var txt = $(this).text();
+									$("#searchSelect .title").text(txt);
+								})
+								$(document).bind("click", function() {
+									$("#searchSelect .showUl").hide();
+								})
 							})
      </script>
      <ul id="nav">
@@ -137,6 +100,11 @@
       <li>
        <a href="/portal/topicView.do?method=view&amp;view=Infor&amp;id=1665&amp;ver=2&amp;st=1" target="_self">
         采购信息
+       </a>
+      </li>
+      <li>
+       <a href="http://cz.tj.gov.cn/zwgk_53713/jggk/ldxx/" target="_self">
+        机构设置
        </a>
       </li>
       <li>
@@ -165,20 +133,20 @@
   </div>
   <div id="content">
    <div class="layoutWidth">
-    <input id="id" name="id" type="hidden" value="1664"/>
+    <input id="id" name="id" type="hidden" value="2014"/>
     <input id="view" name="view" type="hidden" value="Infor"/>
     <div class="message">
      欢迎访问天津市政府采购信息管理系统！
      <span class="sTimes">
       今天是：
       <b class="ymd">
-       Tue Nov 24 22:07:37 CST 2020
+       Sun Dec 06 20:27:35 CST 2020
       </b>
       <b class="week">
-       Tue Nov 24 22:07:37 CST 2020
+       Sun Dec 06 20:27:35 CST 2020
       </b>
       <b class="lunar">
-       农历十月初十
+       农历十月廿二
       </b>
      </span>
     </div>
@@ -186,9 +154,8 @@
      <div id="pageContent">
       <div class="pageInner">
        <div id="crumbs">
-        当前位置：首页&gt;
-
-                        采购公告—区级
+        当前位置：首页&gt;
+                        采购结果公告-市级
         <span class="btnFilter">
          高级筛选
         </span>
@@ -208,121 +175,16 @@
                标题：
               </div>
              </td>
-             <td width="69%">
+             <td colspan="3">
               <input class="txtTitle" id="title" name="name" type="text" value=""/>
+              <input id="st" name="st" type="hidden" value="1"/>
              </td>
-             <td class="rightAlign" rowspan="3" style=" vertical-align:top;padding-left:11px" width="1%">
-              <div class="areaChecked clearfix" style="margin-right: -10px">
-               <span class="item">
-                <input id="checkAll" onclick="checkedAll();" type="checkbox"/>
-                全选
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="2"/>
-                和平区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="3"/>
-                河东区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="4"/>
-                河西区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="5"/>
-                南开区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="6"/>
-                河北区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="7"/>
-                红桥区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="8"/>
-                东丽区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="9"/>
-                西青区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="10"/>
-                津南区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="11"/>
-                北辰区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="12"/>
-                武清区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="13"/>
-                宝坻区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="14"/>
-                宁河区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="15"/>
-                静海区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="16"/>
-                蓟州区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="17"/>
-                滨海新区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="18"/>
-                开发区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="19"/>
-                保税区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="20"/>
-                滨海高新区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="21"/>
-                中新天津生态城
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="22"/>
-                中心商务区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="23"/>
-                东疆保税港区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="27"/>
-                临港经济区
-               </span>
-               <span class="item">
-                <input name="siteList" onclick="checkOne();" type="checkbox" value="28"/>
-                天津海河教育园区
-               </span>
-              </div>
-             </td>
-            </tr>
-            <tr>
              <td class="rightAlign">
               <div style="width:70px;">
                采购单位：
               </div>
              </td>
-             <td colspan="3">
+             <td colspan="2">
               <input class="txtTitle" id="buyUnitName" name="buyUnitName" type="text" value=""/>
              </td>
             </tr>
@@ -332,25 +194,23 @@
                项目编号：
               </div>
              </td>
-             <td colspan="1">
+             <td colspan="3">
               <input class="txtTitle" id="projectCode" name="projectCode" type="text" value=""/>
+              <td class="rightAlign">
+               <div style="width:70px;">
+                项目名称：
+               </div>
+              </td>
+              <td colspan="2">
+               <input class="txtTitle" id="projectName" name="projectName" type="text" value=""/>
+              </td>
              </td>
             </tr>
             <tr>
-             <td class="rightAlign">
-              <div style="width:70px;">
-               项目名称：
-              </div>
-             </td>
-             <td colspan="1">
-              <input class="txtTitle" id="projectName" name="projectName" type="text" value=""/>
-             </td>
-            </tr>
-            <tr>
-             <td class="rightAlign">
+             <td class="rightAlign" style="width:70px;">
               时间：
              </td>
-             <td>
+             <td colspan="3">
               <span class="timeSel">
                <input id="stateTime" name="ldateQGE" readonly="readonly" type="text" value=""/>
               </span>
@@ -361,21 +221,15 @@
                <input id="endTime" name="ldateQLE" readonly="readonly" type="text" value=""/>
               </span>
              </td>
-             <td rowspan="2">
-              <input id="topId" name="id" type="hidden" value="1664"/>
+             <td colspan="3">
+              <input id="st" name="st" type="hidden" value="1"/>
+              <input id="topId" name="id" type="hidden" value="2014"/>
               <input id="view" name="view" type="hidden" value="Infor"/>
               <input id="type" name="type" type="hidden" value=""/>
-              <input id="fd" name="fd" type="hidden" value=""/>
               <input id="typeIn" name="typeIn" type="hidden" value=""/>
-              <input class="btnStyle" style="float: right" type="reset" value="重置"/>
+              <input class="btnStyle" style="float: right ;margin-right:10px" type="reset" value="重置"/>
               <input class="btnStyle" style="float: right" type="submit" value="查询"/>
              </td>
-            </tr>
-            <tr>
-            </tr>
-            <tr>
-            </tr>
-            <tr>
             </tr>
            </table>
           </li>
@@ -384,43 +238,29 @@
        </div>
       </div>
       <script type="text/javascript">
-       $(function () {
-
-                        $(".btnFilter").bind("click", function () {
-
-                            $(this).toggleClass("selected");
-
-                            $("#filtrate").toggle();
-
-                        })
-
-                        newthis();
-
-
-
-                        function newthis() {
-
-                            var type = $('#type').val();
-
-                            if (type != '') {
-
-                                $(".btnFilter").toggleClass("selected");
-
-                                $("#filtrate").toggle();
-
-                            }
-
-                        }
-
+       $(function () {
+                        $(".btnFilter").bind("click", function () {
+                            $(this).toggleClass("selected");
+                            $("#filtrate").toggle();
+                        })
+                        newthis();
+
+                        function newthis() {
+                            var type = $('#type').val();
+                            if (type != '') {
+                                $(".btnFilter").toggleClass("selected");
+                                $("#filtrate").toggle();
+                            }
+                        }
                     })
       </script>
       <div class="pageTitle" style="height: 44px;">
        <h1>
-        采购公告—区级
+        采购结果公告-市级
         <i>
         </i>
        </h1>
-       <div class="warnInfo2">
+       <div class="warnInfo1">
         以下信息由采购人或采购代理机构发布，信息的真实性、准确性、完整性由采购人或代理机构负责
        </div>
       </div>
@@ -430,148 +270,131 @@
          <b>
           ·
          </b>
-         <a href="/viewer.do?id=12313726&amp;ver=2" target="_blank" title="天津市南开区中心小学 天津市南开区中心小学报告厅设备购置项目 (项目编号:YHZB2016-N-130)竞争性谈判公告竞争性谈判">
-          天津市南开区中心小学 天津市南开区中心小学报告厅设备购置项目 (项目编号:YHZB2016-N-130)竞争性谈判公告竞争性谈判
+         <a href="/viewer.do?id=171106119&amp;ver=2" target="_blank" title="天津市卫生计生统计信息中心 天津市卫生计生统计信息中心（贵州路）服务器存储及综合布线年度运维服务项目 (项目编号:TLBHGJ-T19-1238)成交公告">
+          天津市卫生计生统计信息中心 天津市卫生计生统计信息中心（贵州路）服务器存储及综合布线年度运维服务项目 (项目编号:TLBHGJ-T19-1238)成交公告
          </a>
          <span class="time">
-          Tue Aug 02 17:30:39 CST 2016
+          Fri Dec 20 16:02:33 CST 2019
          </span>
         </li>
         <li>
          <b>
           ·
          </b>
-         <a href="/viewer.do?id=12313131&amp;ver=2" target="_blank" title="天津市第九十六中学 保洁绿化服务 (项目编号:BCGP-2016-054)竞争性磋商公告竞争性磋商">
-          天津市第九十六中学 保洁绿化服务 (项目编号:BCGP-2016-054)竞争性磋商公告竞争性磋商
+         <a href="/viewer.do?id=171106116&amp;ver=2" target="_blank" title="天津市卫生计生统计信息中心 天津市卫生计生统计信息中心（贵州路）网络安全设备年度运维服务项目 (项目编号:TLBHGJ-T19-1239)成交公告">
+          天津市卫生计生统计信息中心 天津市卫生计生统计信息中心（贵州路）网络安全设备年度运维服务项目 (项目编号:TLBHGJ-T19-1239)成交公告
          </a>
          <span class="time">
-          Tue Aug 02 17:12:20 CST 2016
+          Fri Dec 20 16:02:12 CST 2019
          </span>
         </li>
         <li>
          <b>
           ·
          </b>
-         <a href="/viewer.do?id=12312787&amp;ver=2" target="_blank" title="天津市西青区大寺镇人民政府机关 天津市西青区大寺镇人民政府购置天易园小学常用设备购置安装项目 (项目编号:XQGPC-20160496-1)公开招标公告公开招标">
-          天津市西青区大寺镇人民政府机关 天津市西青区大寺镇人民政府购置天易园小学常用设备购置安装项目 (项目编号:XQGPC-20160496-1)公开招标公告公开招标
+         <a href="/viewer.do?id=171106003&amp;ver=2" target="_blank" title="天津市卫生计生统计信息中心 天津市卫生计生统计信息中心（贵州路）信息安全服务项目 (项目编号:TLBHGJ-T19-1240)成交公告">
+          天津市卫生计生统计信息中心 天津市卫生计生统计信息中心（贵州路）信息安全服务项目 (项目编号:TLBHGJ-T19-1240)成交公告
          </a>
          <span class="time">
-          Tue Aug 02 16:50:08 CST 2016
+          Fri Dec 20 16:01:39 CST 2019
          </span>
         </li>
         <li>
          <b>
           ·
          </b>
-         <a href="/viewer.do?id=12312690&amp;ver=2" target="_blank" title="天津市西青区大寺镇人民政府机关 天津市西青区大寺镇人民政府购置南北口小学常用设备购置安装项目 (项目编号:XQGPC-20160499-1)公开招标公告公开招标">
-          天津市西青区大寺镇人民政府机关 天津市西青区大寺镇人民政府购置南北口小学常用设备购置安装项目 (项目编号:XQGPC-20160499-1)公开招标公告公开招标
+         <a href="/viewer.do?id=171105567&amp;ver=2" target="_blank" title="天津市体育彩票管理中心媒体投放服务采购项目 (项目编号:0615-194119060537)中标公告">
+          天津市体育彩票管理中心媒体投放服务采购项目 (项目编号:0615-194119060537)中标公告
          </a>
          <span class="time">
-          Tue Aug 02 16:43:32 CST 2016
+          Fri Dec 20 15:57:46 CST 2019
          </span>
         </li>
         <li>
          <b>
           ·
          </b>
-         <a href="/viewer.do?id=12312568&amp;ver=2" target="_blank" title="天津市红桥区安全生产监督管理局（机关） 天津市红桥区安全生产监督管理局购买安全技术服务项目 (项目编号:HGGP-2016-B-0653)竞争性磋商公告竞争性磋商">
-          天津市红桥区安全生产监督管理局（机关） 天津市红桥区安全生产监督管理局购买安全技术服务项目 (项目编号:HGGP-2016-B-0653)竞争性磋商公告竞争性磋商
+         <a href="/viewer.do?id=171102743&amp;ver=2" target="_blank" title="天津市种子管理站办公家具项目(项目编号:TGPC-2019-A-0845)成交公告">
+          天津市种子管理站办公家具项目(项目编号:TGPC-2019-A-0845)成交公告
          </a>
          <span class="time">
-          Tue Aug 02 16:32:22 CST 2016
+          Fri Dec 20 15:33:21 CST 2019
          </span>
         </li>
         <li>
          <b>
           ·
          </b>
-         <a href="/viewer.do?id=12308738&amp;ver=2" target="_blank" title="天津市和平区民政局机关 天津市和平区社会组织孵化中心地震体验馆装修工程 (项目编号:YHZB2016-H-048)竞争性磋商公告竞争性磋商">
-          天津市和平区民政局机关 天津市和平区社会组织孵化中心地震体验馆装修工程 (项目编号:YHZB2016-H-048)竞争性磋商公告竞争性磋商
+         <a href="/viewer.do?id=171098286&amp;ver=2" target="_blank" title="天津市人民检察院餐饮服务项目(第1包) (项目编号:TGPC-2019-D-0468(第1包))成交公告">
+          天津市人民检察院餐饮服务项目(第1包) (项目编号:TGPC-2019-D-0468(第1包))成交公告
          </a>
          <span class="time">
-          Tue Aug 02 15:15:49 CST 2016
+          Fri Dec 20 15:04:28 CST 2019
          </span>
         </li>
         <li>
          <b>
           ·
          </b>
-         <a href="/viewer.do?id=12285778&amp;ver=2" target="_blank" title="天津市东丽区财政局机关 天津市东丽区财政局小二楼铝塑板外檐工程项目 (项目编号:HGGP-2016-A-0460)竞争性磋商公告竞争性磋商">
-          天津市东丽区财政局机关 天津市东丽区财政局小二楼铝塑板外檐工程项目 (项目编号:HGGP-2016-A-0460)竞争性磋商公告竞争性磋商
+         <a href="/viewer.do?id=171097631&amp;ver=2" target="_blank" title="天津市天津医院 天津市天津医院高档彩色多普勒超声诊断仪项目 (项目编号:TGPC-2019-A-0822)中标公告">
+          天津市天津医院 天津市天津医院高档彩色多普勒超声诊断仪项目 (项目编号:TGPC-2019-A-0822)中标公告
          </a>
          <span class="time">
-          Tue Aug 02 10:22:24 CST 2016
+          Fri Dec 20 15:01:48 CST 2019
          </span>
         </li>
         <li>
          <b>
           ·
          </b>
-         <a href="/viewer.do?id=12269340&amp;ver=2" target="_blank" title="中国天津盘山风景名胜区管理局机关 盘山景区护林工作站升级改造工程（神牛福地、紫盖峰护林护林工作站工程） (项目编号:jxcg2016-xh-12)竞争性谈判公告竞争性谈判">
-          中国天津盘山风景名胜区管理局机关 盘山景区护林工作站升级改造工程（神牛福地、紫盖峰护林护林工作站工程） (项目编号:jxcg2016-xh-12)竞争性谈判公告竞争性谈判
+         <a href="/viewer.do?id=171090277&amp;ver=2" target="_blank" title="天津市聋人学校物业管理项目 (项目编号:TGPC-2019-D-0512)成交公告">
+          天津市聋人学校物业管理项目 (项目编号:TGPC-2019-D-0512)成交公告
          </a>
          <span class="time">
-          Mon Aug 01 20:16:13 CST 2016
+          Fri Dec 20 14:25:48 CST 2019
          </span>
         </li>
         <li>
          <b>
           ·
          </b>
-         <a href="/viewer.do?id=12269067&amp;ver=2" target="_blank" title="天津经济技术开发区管理委员会办公室机关 天津经济技术开发区管理委员会办公室开发区消防三大街中队、西区新昌路中队营房防水维修 (项目编号:TJBHGP-TEDA-2016-043)竞争性谈判公告竞争性谈判">
-          天津经济技术开发区管理委员会办公室机关 天津经济技术开发区管理委员会办公室开发区消防三大街中队、西区新昌路中队营房防水维修 (项目编号:TJBHGP-TEDA-2016-043)竞争性谈判公告竞争性谈判
+         <a href="/viewer.do?id=171089263&amp;ver=2" target="_blank" title="天津市绿色建筑促进发展中心 勘察施工图审查机构政府买服务项目(第1包) (项目编号:QYTJ-2019-A-090(第1包))成交公告">
+          天津市绿色建筑促进发展中心 勘察施工图审查机构政府买服务项目(第1包) (项目编号:QYTJ-2019-A-090(第1包))成交公告
          </a>
          <span class="time">
-          Mon Aug 01 18:59:47 CST 2016
+          Fri Dec 20 14:16:59 CST 2019
          </span>
         </li>
         <li>
          <b>
           ·
          </b>
-         <a href="/viewer.do?id=12269004&amp;ver=2" target="_blank" title="天津经济技术开发区管理委员会办公室机关 天津经济技术开发区管理委员会办公室公安开发区分局会议室改造 (项目编号:TJBHGP-TEDA-2016-041)竞争性谈判公告竞争性谈判">
-          天津经济技术开发区管理委员会办公室机关 天津经济技术开发区管理委员会办公室公安开发区分局会议室改造 (项目编号:TJBHGP-TEDA-2016-041)竞争性谈判公告竞争性谈判
+         <a href="/viewer.do?id=171083091&amp;ver=2" target="_blank" title="天津市复员退伍军人精神病疗养院物业管理项目(项目编号:TGPC-2019-D-0493)成交公告">
+          天津市复员退伍军人精神病疗养院物业管理项目(项目编号:TGPC-2019-D-0493)成交公告
          </a>
          <span class="time">
-          Mon Aug 01 18:44:46 CST 2016
+          Fri Dec 20 13:41:16 CST 2019
          </span>
         </li>
        </ul>
        <script type="text/javascript">
-        function a(li_click) {
-
-                            for (var i = 1; i < 4; i++) {
-
-                                $("#ul_li_" + i).css({
-
-                                    "background": "#fff",
-
-                                    "color": "#2386ff"
-
-                                });
-
-                            }
-
-                            li_click.style.backgroundColor = "#2386ff";
-
-                            li_click.style.color = "#fff";
-
-                            for (var k = 1; k < 4; k++) {
-
-                                $("#div_ul_" + k).css("display", "none");
-
-                                $("#ul_li_i_" + k).css("display", "none");
-
-                            }
-
-                            $("#div_ul_" + li_click.getAttribute('aimg'))
-
-                                .css("display", "block");
-
-                            $("#ul_li_i_" + li_click.getAttribute('aimg'))
-
-                                .css("display", "block");
-
+        function a(li_click) {
+                            for (var i = 1; i < 4; i++) {
+                                $("#ul_li_" + i).css({
+                                    "background": "#fff",
+                                    "color": "#2386ff"
+                                });
+                            }
+                            li_click.style.backgroundColor = "#2386ff";
+                            li_click.style.color = "#fff";
+                            for (var k = 1; k < 4; k++) {
+                                $("#div_ul_" + k).css("display", "none");
+                                $("#ul_li_i_" + k).css("display", "none");
+                            }
+                            $("#div_ul_" + li_click.getAttribute('aimg'))
+                                .css("display", "block");
+                            $("#ul_li_i_" + li_click.getAttribute('aimg'))
+                                .css("display", "block");
                         }
        </script>
        <div id="pagesColumn">
@@ -580,23 +403,23 @@
           <a class="selected" onclick="findGoodsAndRef(1,1);">
            首页
           </a>
-          <a onclick="findGoodsAndRef(4375,1);">
+          <a onclick="findGoodsAndRef(364,1);">
            &lt;
           </a>
           <a>
-           4376
+           365
           </a>
-          <a onclick="findGoodsAndRef(4377,1);">
+          <a onclick="findGoodsAndRef(366,1);">
            &gt;
           </a>
-          <a class="selected" onclick="findGoodsAndRef(4391,1);">
+          <a class="selected" onclick="findGoodsAndRef(2880,1);">
            末页
           </a>
          </span>
          <span class="countPage">
           共
           <b>
-           4391
+           2880
           </b>
           页,到第
           <input id="goNum" name="goNum" onkeypress="if((event.keyCode&lt;48&amp;&amp;event.keyCode==46)  || event.keyCode&gt;57){return false};" style="width:35px" type="text" value=""/>
@@ -622,29 +445,19 @@
        </div>
        <ul class="oneWrap" style="none">
         <li class="one">
-         <a class="linktwo" href="?method=view&amp;view=news&amp;id=7019&amp;ver=2&amp;st=1&amp;stmp=1606226857700">
+         <a class="linktwo" href="?method=view&amp;view=news&amp;id=7019&amp;ver=2&amp;st=1&amp;stmp=1607257655023">
           工作动态
           <span>
-           (
-
-                                
-
-                                
-
-                                    
-
-                                        
-
-                                        
-
-                                            137
-
-                                        
-
-                                    
-
-                                
-
+           (
+                                
+                                
+                                    
+                                        
+                                        
+                                            137
+                                        
+                                    
+                                
                             )
           </span>
           <i>
@@ -667,116 +480,76 @@
           </i>
          </a>
          <div class="twoWrap" style="display: none">
-          <a class="" href="?method=view&amp;view=Infor&amp;id=1662&amp;ver=2&amp;st=1&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=Infor&amp;id=1662&amp;ver=2&amp;st=1&amp;stmp=1607257655023">
            市级
            <span>
-            (
-
-                                    
-
-                                    
-
-                                        
-
-                                            
-
-                                            
-
-                                                245
-
-                                            
-
-                                        
-
-                                    
-
+            (
+                                    
+                                    
+                                        
+                                            
+                                            
+                                                247
+                                            
+                                        
+                                    
                                 )
            </span>
           </a>
-          <a class="" href="?method=view&amp;view=Infor&amp;id=1994&amp;ver=2&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=Infor&amp;id=1994&amp;ver=2&amp;stmp=1607257655023">
            区级
            <span>
-            (
-
-                                
-
-                                
-
-                                    
-
-                                        
-
-                                        
-
-                                            898
-
-                                        
-
-                                    
-
-                                
-
+            (
+                                
+                                
+                                    
+                                        
+                                        
+                                            909
+                                        
+                                    
+                                
                             )
            </span>
           </a>
          </div>
         </li>
         <li class="one">
-         <a class="twoHead selected">
+         <a class="twoHead">
           采购公告
           <i>
           </i>
          </a>
-         <div class="twoWrap" style="display: block">
-          <a class="" href="?method=view&amp;view=Infor&amp;id=1665&amp;ver=2&amp;st=1&amp;stmp=1606226857700">
+         <div class="twoWrap" style="display: none">
+          <a class="" href="?method=view&amp;view=Infor&amp;id=1665&amp;ver=2&amp;st=1&amp;stmp=1607257655023">
            市级
            <span>
-            (
-
-                                    
-
-                                    
-
-                                        
-
-                                            
-
-                                            
-
-                                                25158
-
-                                            
-
-                                        
-
-                                    
-
+            (
+                                    
+                                    
+                                        
+                                            
+                                            
+                                                25318
+                                            
+                                        
+                                    
                                 )
            </span>
           </a>
-          <a class="selected" href="?method=view&amp;view=Infor&amp;id=1664&amp;ver=2&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=Infor&amp;id=1664&amp;ver=2&amp;stmp=1607257655023">
            区级
            <span>
-            (
-
-                                
-
-                                
-
-                                    
-
-                                        
-
-                                        
-
-                                            43907
-
-                                        
-
-                                    
-
-                                
-
+            (
+                                
+                                
+                                    
+                                        
+                                        
+                                            44164
+                                        
+                                    
+                                
                             )
            </span>
           </a>
@@ -789,116 +562,76 @@
           </i>
          </a>
          <div class="twoWrap" style="display: none">
-          <a class="" href="?method=view&amp;view=Infor&amp;id=1663&amp;ver=2&amp;st=1&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=Infor&amp;id=1663&amp;ver=2&amp;st=1&amp;stmp=1607257655023">
            市级
            <span>
-            (
-
-                                    
-
-                                    
-
-                                        
-
-                                            
-
-                                            
-
-                                                5626
-
-                                            
-
-                                        
-
-                                    
-
+            (
+                                    
+                                    
+                                        
+                                            
+                                            
+                                                5668
+                                            
+                                        
+                                    
                                 )
            </span>
           </a>
-          <a class="" href="?method=view&amp;view=Infor&amp;id=1666&amp;ver=2&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=Infor&amp;id=1666&amp;ver=2&amp;stmp=1607257655023">
            区级
            <span>
-            (
-
-                                
-
-                                
-
-                                    
-
-                                        
-
-                                        
-
-                                            9655
-
-                                        
-
-                                    
-
-                                
-
+            (
+                                
+                                
+                                    
+                                        
+                                        
+                                            9724
+                                        
+                                    
+                                
                             )
            </span>
           </a>
          </div>
         </li>
         <li class="one">
-         <a class="twoHead">
+         <a class="twoHead selected">
           采购结果公告
           <i>
           </i>
          </a>
-         <div class="twoWrap" style="display: none">
-          <a class="" href="?method=view&amp;view=Infor&amp;id=2014&amp;ver=2&amp;st=1&amp;stmp=1606226857700">
+         <div class="twoWrap" style="display: block">
+          <a class="selected" href="?method=view&amp;view=Infor&amp;id=2014&amp;ver=2&amp;st=1&amp;stmp=1607257655023">
            市级
            <span>
-            (
-
-                                    
-
-                                    
-
-                                        
-
-                                            
-
-                                            
-
-                                                28601
-
-                                            
-
-                                        
-
-                                    
-
+            (
+                                    
+                                    
+                                        
+                                            
+                                            
+                                                28797
+                                            
+                                        
+                                    
                                 )
            </span>
           </a>
-          <a class="" href="?method=view&amp;view=Infor&amp;id=2013&amp;ver=2&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=Infor&amp;id=2013&amp;ver=2&amp;stmp=1607257655023">
            区级
            <span>
-            (
-
-                                
-
-                                
-
-                                    
-
-                                        
-
-                                        
-
-                                            46082
-
-                                        
-
-                                    
-
-                                
-
+            (
+                                
+                                
+                                    
+                                        
+                                        
+                                            46337
+                                        
+                                    
+                                
                             )
            </span>
           </a>
@@ -911,55 +644,35 @@
           </i>
          </a>
          <div class="twoWrap" style="display: none">
-          <a class="" href="?method=view&amp;view=Infor&amp;id=2015&amp;ver=2&amp;st=1&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=Infor&amp;id=2015&amp;ver=2&amp;st=1&amp;stmp=1607257655023">
            市级
            <span>
-            (
-
-                                    
-
-                                    
-
-                                        
-
-                                            
-
-                                            
-
-                                                63944
-
-                                            
-
-                                        
-
-                                    
-
+            (
+                                    
+                                    
+                                        
+                                            
+                                            
+                                                65701
+                                            
+                                        
+                                    
                                 )
            </span>
           </a>
-          <a class="" href="?method=view&amp;view=Infor&amp;id=2016&amp;ver=2&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=Infor&amp;id=2016&amp;ver=2&amp;stmp=1607257655023">
            区级
            <span>
-            (
-
-                                
-
-                                
-
-                                    
-
-                                        
-
-                                        
-
-                                            83682
-
-                                        
-
-                                    
-
-                                
-
+            (
+                                
+                                
+                                    
+                                        
+                                        
+                                            84885
+                                        
+                                    
+                                
                             )
            </span>
           </a>
@@ -972,55 +685,35 @@
           </i>
          </a>
          <div class="twoWrap" style="display: none">
-          <a class="" href="?method=view&amp;view=intention&amp;id=2021&amp;ver=2&amp;st=1&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=intention&amp;id=2021&amp;ver=2&amp;st=1&amp;stmp=1607257655023">
            市级
            <span>
-            (
-
-                                    
-
-                                    
-
-                                        
-
-                                            
-
-                                            
-
-                                                1306
-
-                                            
-
-                                        
-
-                                    
-
+            (
+                                    
+                                    
+                                        
+                                            
+                                            
+                                                1372
+                                            
+                                        
+                                    
                                 )
            </span>
           </a>
-          <a class="" href="?method=view&amp;view=intention&amp;id=2022&amp;ver=2&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=intention&amp;id=2022&amp;ver=2&amp;stmp=1607257655023">
            区级
            <span>
-            (
-
-									
-
-									
-
-										
-
-											
-
-											
-
-												1
-
-											
-
-										
-
-									
-
+            (
+									
+									
+										
+											
+											
+												18
+											
+										
+									
 								)
            </span>
           </a>
@@ -1033,55 +726,35 @@
           </i>
          </a>
          <div class="twoWrap" style="display: none">
-          <a class="" href="?method=view&amp;view=Infor&amp;id=2033&amp;ver=2&amp;st=1&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=Infor&amp;id=2033&amp;ver=2&amp;st=1&amp;stmp=1607257655023">
            市级
            <span>
-            (
-
-                                    
-
-                                    
-
-                                        
-
-                                            
-
-                                            
-
-                                                3094
-
-                                            
-
-                                        
-
-                                    
-
+            (
+                                    
+                                    
+                                        
+                                            
+                                            
+                                                3105
+                                            
+                                        
+                                    
                                 )
            </span>
           </a>
-          <a class="" href="?method=view&amp;view=Infor&amp;id=2034&amp;ver=2&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=Infor&amp;id=2034&amp;ver=2&amp;stmp=1607257655023">
            区级
            <span>
-            (
-
-                                
-
-                                
-
-                                    
-
-                                        
-
-                                        
-
-                                            2299
-
-                                        
-
-                                    
-
-                                
-
+            (
+                                
+                                
+                                    
+                                        
+                                        
+                                            2314
+                                        
+                                    
+                                
                             )
            </span>
           </a>
@@ -1103,55 +776,35 @@
           </i>
          </a>
          <div class="twoWrap" style="display: none">
-          <a class="" href="?method=view&amp;view=tscl&amp;id=5776729&amp;ver=2&amp;st=1&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=tscl&amp;id=5776729&amp;ver=2&amp;st=1&amp;stmp=1607257655023">
            市级
            <span>
-            (
-
-                                    
-
-                                    
-
-                                        
-
-                                            
-
-                                            
-
-                                                141
-
-                                            
-
-                                        
-
-                                    
-
+            (
+                                    
+                                    
+                                        
+                                            
+                                            
+                                                144
+                                            
+                                        
+                                    
                                 )
            </span>
           </a>
-          <a class="" href="?method=view&amp;view=tscl&amp;id=5903425&amp;ver=2&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=tscl&amp;id=5903425&amp;ver=2&amp;stmp=1607257655023">
            区级
            <span>
-            (
-
-                                
-
-                                
-
-                                    
-
-                                        
-
-                                        
-
-                                            207
-
-                                        
-
-                                    
-
-                                
-
+            (
+                                
+                                
+                                    
+                                        
+                                        
+                                            211
+                                        
+                                    
+                                
                             )
            </span>
           </a>
@@ -1166,55 +819,35 @@
           </i>
          </a>
          <div class="twoWrap" style="display: none">
-          <a class="" href="?method=view&amp;view=tscl&amp;id=5776730&amp;ver=2&amp;st=1&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=tscl&amp;id=5776730&amp;ver=2&amp;st=1&amp;stmp=1607257655023">
            市级
            <span>
-            (
-
-                                    
-
-                                    
-
-                                        
-
-                                            
-
-                                            
-
-                                                109
-
-                                            
-
-                                        
-
-                                    
-
+            (
+                                    
+                                    
+                                        
+                                            
+                                            
+                                                109
+                                            
+                                        
+                                    
                                 )
            </span>
           </a>
-          <a class="" href="?method=view&amp;view=tscl&amp;id=5903537&amp;ver=2&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=tscl&amp;id=5903537&amp;ver=2&amp;stmp=1607257655023">
            区级
            <span>
-            (
-
-                                
-
-                                
-
-                                    
-
-                                        
-
-                                        
-
-                                            76
-
-                                        
-
-                                    
-
-                                
-
+            (
+                                
+                                
+                                    
+                                        
+                                        
+                                            79
+                                        
+                                    
+                                
                             )
            </span>
           </a>
@@ -1229,55 +862,35 @@
           </i>
          </a>
          <div class="twoWrap" style="display: none">
-          <a class="" href="?method=view&amp;view=tscl&amp;id=5776731&amp;ver=2&amp;st=1&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=tscl&amp;id=5776731&amp;ver=2&amp;st=1&amp;stmp=1607257655023">
            市级
            <span>
-            (
-
-                                    
-
-                                    
-
-                                        
-
-                                            
-
-                                            
-
-                                                15
-
-                                            
-
-                                        
-
-                                    
-
+            (
+                                    
+                                    
+                                        
+                                            
+                                            
+                                                15
+                                            
+                                        
+                                    
                                 )
            </span>
           </a>
-          <a class="" href="?method=view&amp;view=tscl&amp;id=5903539&amp;ver=2&amp;stmp=1606226857700">
+          <a class="" href="?method=view&amp;view=tscl&amp;id=5903539&amp;ver=2&amp;stmp=1607257655023">
            区级
            <span>
-            (
-
-                                
-
-                                
-
-                                    
-
-                                        
-
-                                        
-
-                                            32
-
-                                        
-
-                                    
-
-                                
-
+            (
+                                
+                                
+                                    
+                                        
+                                        
+                                            33
+                                        
+                                    
+                                
                             )
            </span>
           </a>
@@ -1293,14 +906,14 @@
        </div>
        <ul class="oneWrap" style="none">
         <li class="one">
-         <a class="linktwo" href="?method=view&amp;view=zcfg&amp;id=1995&amp;ver=2&amp;stmp=1606226857700">
+         <a class="linktwo" href="?method=view&amp;view=zcfg&amp;id=1995&amp;ver=2&amp;stmp=1607257655023">
           国家级
           <i>
           </i>
          </a>
         </li>
         <li class="one">
-         <a class="linktwo" href="?method=view&amp;view=zcfg&amp;id=1996&amp;ver=2&amp;stmp=1606226857700">
+         <a class="linktwo" href="?method=view&amp;view=zcfg&amp;id=1996&amp;ver=2&amp;stmp=1607257655023">
           市级
           <i>
           </i>
@@ -1316,29 +929,19 @@
        </div>
        <ul class="oneWrap" style="none">
         <li class="one">
-         <a class="linktwo" href="?method=view&amp;view=zqyj&amp;id=1912396&amp;ver=2&amp;st=1&amp;stmp=1606226857700">
+         <a class="linktwo" href="?method=view&amp;view=zqyj&amp;id=1912396&amp;ver=2&amp;st=1&amp;stmp=1607257655023">
           征求意见
           <span>
-           (
-
-                            
-
-                            
-
-                                
-
-                                    
-
-                                    
-
-                                        12
-
-                                    
-
-                                
-
-                            
-
+           (
+                            
+                            
+                                
+                                    
+                                    
+                                        12
+                                    
+                                
+                            
                         )
           </span>
           <i>
@@ -1355,29 +958,19 @@
        </div>
        <ul class="oneWrap" style="none">
         <li class="one">
-         <a class="linktwo" href="?method=view&amp;view=xzzq&amp;id=1912401&amp;ver=2&amp;stmp=1606226857700">
+         <a class="linktwo" href="?method=view&amp;view=xzzq&amp;id=1912401&amp;ver=2&amp;stmp=1607257655023">
           下载专区
           <span>
-           (
-
-                            
-
-                            
-
-                                
-
-                                    
-
-                                    
-
-                                        38
-
-                                    
-
-                                
-
-                            
-
+           (
+                            
+                            
+                                
+                                    
+                                    
+                                        38
+                                    
+                                
+                            
                         )
           </span>
           <i>
@@ -1396,21 +989,21 @@
        </div>
        <ul class="oneWrap" style="none">
         <li class="one">
-         <a class="linktwo" href="?method=Departlist&amp;view=jgxx&amp;id=1912390&amp;typeIn=1&amp;stmp=1606226857700">
+         <a class="linktwo" href="?method=Departlist&amp;view=jgxx&amp;id=1912390&amp;typeIn=1&amp;stmp=1607257655023">
           监督管理部门
           <i>
           </i>
          </a>
         </li>
         <li class="one">
-         <a class="linktwo" href="?method=Departlist&amp;view=jgxx&amp;id=1912391&amp;typeIn=2&amp;stmp=1606226857700">
+         <a class="linktwo" href="?method=Departlist&amp;view=jgxx&amp;id=1912391&amp;typeIn=2&amp;stmp=1607257655023">
           集中采购机构
           <i>
           </i>
          </a>
         </li>
         <li class="one">
-         <a class="linktwo" href="?method=Departlist&amp;view=jgxx&amp;id=1912392&amp;typeIn=3&amp;stmp=1606226857700">
+         <a class="linktwo" href="?method=Departlist&amp;view=jgxx&amp;id=1912392&amp;typeIn=3&amp;stmp=1607257655023">
           社会代理机构
           <i>
           </i>
@@ -1418,7 +1011,7 @@
         </li>
        </ul>
        <div class="menuHead" style="height: 72px;">
-        <a class="oneWrap" href="?method=view&amp;view=cgxe&amp;id=1916195&amp;ver=2&amp;stmp=1606226857700" style="background-position:17px 19px; height: 63px; line-height: 21px;">
+        <a class="oneWrap" href="?method=view&amp;view=cgxe&amp;id=1916195&amp;ver=2&amp;stmp=1607257655023" style="background-position:17px 19px; height: 63px; line-height: 21px;">
          政府集中采购目录
          <br/>
          政府采购限额标准
@@ -1446,10 +1039,10 @@
       </div>
       <p class="fw">
        <span>
-        今日访问：31,490
+        今日访问：35,763
        </span>
        <span>
-        累计访问：54,217,482
+        累计访问：54,649,800
        </span>
       </p>
       <p class="ban">
@@ -1501,68 +1094,37 @@
 <script src="/javascript/laydate/laydate.js" type="text/javascript">
 </script>
 <script type="text/javascript">
- //document.getElementById("imgConac").style = "position: absolute;top: 48px;left: 420px;";
-
-    !function () {
-
-        laydate.skin('molv');//切换皮肤，请查看skins下面皮肤库
-
-        //laydate({ elem: '.timeSel' }); //绑定元素
-
-    }();
-
-    //开始日期
-
-    var start = {
-
-        elem: '#stateTime',
-
-        format: 'YYYY-MM-DD',
-
-        min: '1900-01-01', //设定最小日期为当前日期
-
-        max: '2099-06-16', //最大日期
-
-        istime: true,
-
-        istoday: false,
-
-        choose: function (datas) {
-
-            end.min = datas; //开始日选好后，重置结束日的最小日期
-
-            end.start = datas //将结束日的初始值设定为开始日
-
-        }
-
-    };
-
-    //结束日期
-
-    var end = {
-
-        elem: '#endTime',
-
-        format: 'YYYY-MM-DD',
-
-        min: '1900-01-01 ',
-
-        max: '2099-06-16 23：59：59',
-
-        istime: true,
-
-        istoday: false,
-
-        choose: function (datas) {
-
-            start.max = datas; //结束日选好后，充值开始日的最大日期
-
-        }
-
-    };
-
-    laydate(start);
-
+ //document.getElementById("imgConac").style = "position: absolute;top: 48px;left: 420px;";
+    !function () {
+        laydate.skin('molv');//切换皮肤，请查看skins下面皮肤库
+        //laydate({ elem: '.timeSel' }); //绑定元素
+    }();
+    //开始日期
+    var start = {
+        elem: '#stateTime',
+        format: 'YYYY-MM-DD',
+        min: '1900-01-01', //设定最小日期为当前日期
+        max: '2099-06-16', //最大日期
+        istime: true,
+        istoday: false,
+        choose: function (datas) {
+            end.min = datas; //开始日选好后，重置结束日的最小日期
+            end.start = datas //将结束日的初始值设定为开始日
+        }
+    };
+    //结束日期
+    var end = {
+        elem: '#endTime',
+        format: 'YYYY-MM-DD',
+        min: '1900-01-01 ',
+        max: '2099-06-16 23：59：59',
+        istime: true,
+        istoday: false,
+        choose: function (datas) {
+            start.max = datas; //结束日选好后，充值开始日的最大日期
+        }
+    };
+    laydate(start);
     laydate(end);
 </script>
 <a name="foot">

@@ -19,6 +19,8 @@ def get_head(file) :
 
 def get_content(file) :
     now = file.find('div',id='pageContent')
+    if(type(now)==None):
+        now = file
     return now.prettify()
 
 def get_accessory(file):
@@ -56,7 +58,9 @@ def grab(text,id,url):
     accessory = get_accessory(file)
     head['note']=text
     print(head['ArticleTitle'],head['note'])
-    now_dir = os.path.join(con.local_Dir,'data','page',str(id))
+    now_dir = os.path.join(con.local_Dir,'data','page1',str(id))
+    #page存储的是招标文件
+    #page1存储中标文件
     if not os.path.exists(now_dir):
         os.makedirs(now_dir)
     

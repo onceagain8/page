@@ -1,1 +1,219 @@
-<h1>还没做</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="static/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="static/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
+	<link href="static/css/style.css" rel="stylesheet" >
+	<link href="static/css/main.css" rel = stylesheet >
+	<title>天津地图</title>
+	
+	<style>
+		.main{
+			height:100%;
+			width:90%;
+			margin-top:5%;
+			margin-left:5%;
+		}
+		#guide{
+			height:100%;
+			width:10%;
+			display:block;
+			float:left;
+			border:none;
+			border-radius: 5px 5px 5px 5px;
+			background-color: rgba(255,255,255,0.5);
+		}
+		#show{
+			height:100%;
+			width:87%;
+			display:block;
+			margin-left:3%;
+			float:left;
+		}
+		#sheet,#map{
+			height:49%;
+			width:100%;
+			margin-top:2%;
+			display:block;
+			border:none;
+			border-radius: 5px 5px 5px 5px;
+			background-color: rgba(255,255,255,0.5);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="top">
+		<center> 
+			<ul>
+				<li><a href="/">首页</a></li>
+				<li><a href="{{url_for('cpy')}}">企业视图</a></li>
+				<li><a href="{{url_for('gov')}}">可视化</a></li>
+				<li>
+					<a href="{{url_for('game')}}">小游戏</a>
+					<ul>
+						<li><a href="{{url_for('game_2048')}}">2048</a></li>
+						<li><a href="{{url_for('game_snake')}}">贪吃蛇</a></li>
+					</ul>
+				</li>
+				<li style="float:right"><a href="{{url_for('login')}}">登录</a></li>
+			</ul>
+		</center>
+	</div>
+	<div class="main">
+		<div id="guide"></div>
+		<div id="show">
+			<div id="map" style="margin-top:0"></div>
+			<div id="sheet"></div>
+		</div>
+	</div>
+	<footer style="text-align: center;">
+		<p style="font-weight: 900;font-size: 20px;color: white;">
+		powered by TJU502
+		</p>
+	</footer>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/echarts/4.8.0/echarts.min.js"></script>
+	<script>
+		var datajson=[
+			{name:"和平区",value: 9703},	{name:"南开区",value: 9675},	{name:"河西区",value: 10401},
+			{name:"河东区",value: 9305},	{name:"河北区",value: 9370},	{name:"红桥区",value: 9275},
+			{name:"滨海新区",value:7776},	{name:"西青区",value: 5973},	{name:"东丽区",value: 4313},
+			{name:"北辰区",value: 5205},	{name:"津南区",value: 4589},	{name:"武清区",value: 7205},
+			{name:"宝坻区",value: 5189},	{name:"宁河区",value: 3498},	{name:"静海区",value: 4310},
+			{name:"蓟州区",value: 3235}
+		];
+		window.onload = function GetMap(){
+			var geojson=null;
+			var url='https://geo.datav.aliyun.com/areas_v2/bound/120000_full.json';
+			MapChart.showLoading();
+			$.get(url,null,function(ret){
+				geojson=ret;
+				loadMap(geojson);
+			});
+		}
+		var MapChart = echarts.init(document.getElementById('map'));
+		var loadMap = function(geojson){
+			echarts.registerMap('tianjin',geojson);
+			MapChart.hideLoading();
+			var data=datajson;
+
+			var geoCoordMap = {
+				'和平区':[117.195907,39.118327],
+				'河东区':[117.226568,39.122125],
+				'河西区':[117.217536,39.101897],
+				'南开区':[117.164143,39.120474],
+				'河北区':[117.201569,39.156632],
+				'红桥区':[117.163301,39.175066],
+				'东丽区':[117.313967,39.087764],
+				'西青区':[117.012247,39.139446],
+				'津南区':[117.382549,38.989577],
+				'北辰区':[117.13482,39.225555],
+				'武清区':[117.057959,39.376925],
+				'宝坻区':[117.308094,39.716965],
+				'滨海新区':[117.654173,39.032846],
+				"宁河区":[117.82828,39.328886],
+				"静海区":[116.925304,38.935671],
+				'蓟州区':[117.407449,40.045342],
+			};
+			var convertData = function (data) {
+				var res = [];
+				for (var i = 0; i < data.length; i++) {
+					var geoCoord = geoCoordMap[data[i].name];
+					if (geoCoord) {
+						res.push({
+							name: data[i].name,
+							value: geoCoord.concat(data[i].value)
+						});
+					}
+				}
+				return res;
+			};
+			//取消浮动图标
+			var option={
+				title:{
+					text:"2016~2020年招标文件分布地图\n数据来源：天津市政府采购网",
+					left:"left"
+				},
+				tooltip:{
+					trigger:'item',//鼠标放上去显示数据和文字。
+					formatter:function(params){
+						if(typeof (params.value)!='undefined'){
+							return params.name+":"+params.value;
+						}else{
+							return "None";
+						}
+					}
+				},
+				visualMap:{
+					show:true,
+					type:'continuous',
+					min:0,
+					max:12000,
+					textStyle:{
+						fontSize:15,
+						color:'#fff'
+					},
+					realtime:true,
+					calculable:true,
+					inRange:{
+						color: ['#2ae0c8', '#a2e1d4', '#acf6ef', '#cbf5fb', '#bdf3d4', '#e6e2c3','#e3c887','#fad8be','#fbb8ac','#fe6673'] 
+					}
+				},
+				geo:{
+					show:true,
+					map:"tianjin",
+					label:{
+						normal:{show:false},
+						emphasis:{show:false},
+					},
+					roam:true,
+					itemStyle:{
+						normal:{
+							areaColor:'#031525',
+							borderColor:'#fff',
+							borderWidth:2,
+						},
+						emphasis:{
+							areaColor:'#56ddff',
+						}
+					}
+				},
+				series:[
+					{
+						type:'map',
+						map:'tianjin',
+						geoIndex:0,
+						aspectScale:0.75,
+						showLegendSymbol:false,
+						label:{
+							normal:{show:false},
+							emphasis:{
+								show:false,
+								textStyle:{color:'#fff'}
+							}
+						},
+						roam:true,
+						itemStyle:{
+							normal:{
+								areaColor:'#031525',
+								borderColor:'#3B5077',
+							},
+							emphasis:{
+								areaColor:'#2B91B7'
+							}
+						},
+						animation:false,
+						data:data
+					},
+				]
+			};
+			MapChart.setOption(option);
+		}
+	</script>
+</body>
+
+</html>

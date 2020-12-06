@@ -51,14 +51,20 @@ def getmatchval(s1,s2):
 #     return render_template('resultlist.html',match_val=match_val,d=d,date_file=date_file,Len=len(s),s=s,ans=ans)
 @app.route('/resultlist',methods=['GET','POST'])
 def resultlist():
+    typed=request.form.get('type')
     s=request.form.get('search')
-    return render_template('resultlist.html',s=s)
+    return render_template('resultlist.html',typed=typed,s=s)
 
-@app.route('/api/resultlist/<s>')
-def apiresultlist(s):
-    print(s)
+@app.route('/api/resultlist/<typed>/<s>')
+def apiresultlist(typed,s):
+    print(typed+" "+s)
     print('len = %d'%len(s))
-    f = open('.'+date_file+'data/js_table.json','r') 
+    if(typed == "招标公告"):
+        f = open('.'+date_file+'data/js_table.json','r')
+        #招标公告json文件
+    elif(typed == "中标公告"):
+        f = open('.'+date_file+'data/js_table1.json','r')
+        #中标公告json文件
     d = json.load(f)
     f.close()
     ans=0
@@ -69,13 +75,17 @@ def apiresultlist(s):
             ans = ans + 1
     resultlist["total"] = ans
     print("finished find")
-    return jsonify(resultlist)
+    return jsonify(resultlist)#传回json文件。
 
+#这个展示的是招标文件
 @app.route('/show/<pro_id>')
 def show(pro_id):
     return render_template('show.html',pro_id=pro_id)
+@app.route('/show1/<pro_id>')
+def show1(pro_id):
+    return render_template('show1.html',pro_id=pro_id)
 
-
+#招标文件
 @app.route('/api/show/<json_id>')
 def find(json_id):
     nowpath=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static','reptile','data','page', json_id, 'main.json')

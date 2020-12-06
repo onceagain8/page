@@ -68,19 +68,3 @@ body {
     /* background-color: #7BA7AB; */
     font-family: "Microsoft YaHei","宋体","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
 }
-
-button {
-    outline: none;
-    border: none;
-    height: 48px;
-    width: 45px;
-    cursor: pointer;
-    position: relative;
-}
-input {
-    border: none;
-    outline: none;
-    width: 30%;
-    height: 42px;
-    padding-left: 13px;
-}

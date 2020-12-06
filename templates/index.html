@@ -9,23 +9,6 @@
 		<link href="static/css/main.css" rel = stylesheet >
 		<style>
 
-
-			button {
-				outline: none;
-				border: none;
-				height: 48px;
-				width: 45px;
-				cursor: pointer;
-				position: relative;
-			}
-			input {
-				border: none;
-				outline: none;
-				width: 30%;
-				height: 42px;
-				padding-left: 13px;
-			}
-
 			div{
 				text-align: center;
 			}
@@ -43,13 +26,6 @@
 				min-height: 238px;
 				/* background-color: #7BA7AB; */
 			}
-			div{
-				text-align: center;
-			}
-			.black{
-				height: auto;
-				background: url("image/index.png");
-			}
 			.logo{
 				/*background-color:skyblue;*/
 				width:auto;
@@ -65,7 +41,13 @@
 				height: 42px;
 				padding-left: 13px;
 			}
-
+			select{
+				border:none;
+				outline:none;
+				width:7%;
+				height:42px;
+				padding-left:13px;
+			}
 			button {
 				outline: none;
 				border: none;
@@ -74,13 +56,17 @@
 				cursor: pointer;
 				position: relative;
 			}
-			/* 搜索框1*/
-			/* .bar {background: #7BA7AB;} */
 			.bar input {
 				border: 2px solid #7BA7AB;
 				border-radius: 5px;
 				background: #F9F0DA;
 				color: #9E9C9C;
+			}
+			.bar select{
+				border:2px solid #7BA7AB;
+				border-radius:5px;
+				background:#F9F0DA;
+				color:#9E9C9C;
 			}
 			.bar button {
 				top: 1px;
@@ -124,7 +110,7 @@
 				<ul>
 					<li><a href="/">首页</a></li>
 					<li><a href="{{url_for('cpy')}}">企业视图</a></li>
-					<li><a href="{{url_for('gov')}}">政府视图</a></li>
+					<li><a href="{{url_for('gov')}}">可视化</a></li>
 					<li>
 						<a href="{{url_for('game')}}">小游戏</a>
 						<ul>
@@ -149,7 +135,11 @@
 			<div class="content">
 				<div class="search bar">
 					<form action="resultlist" method="post">
-						<input type="text" name="search" placeholder="请输入您要搜索的项目..." >
+						<select name="type">
+							<option type="text">招标公告</option>
+							<option type="text">中标公告</option>
+						</select>
+						<input type="text" name="search" placeholder="请输入您要搜索的关键字..." >
 						<button type="submit"></button>
 					</form>
 				</div>
