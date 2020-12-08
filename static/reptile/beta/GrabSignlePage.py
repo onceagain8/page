@@ -19,8 +19,6 @@ def get_head(file) :
 
 def get_content(file) :
     now = file.find('div',id='pageContent')
-    if(type(now)==None):
-        now = file
     return now.prettify()
 
 def get_accessory(file):
