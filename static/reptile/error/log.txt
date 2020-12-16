@@ -8107,3 +8107,617 @@ Traceback (most recent call last):
 requests.exceptions.ConnectionError: HTTPConnectionPool(host='www.ccgp-tianjin.gov.cn', port=80): Max retries exceeded with url: /viewer.do?id=209659003&amp;ver=2 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000266BADEEE50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
 
 
+==================================================
+Error atTue Dec 15 20:45:46 2020
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\main.py", line 21, in <module>
+    GrabPages.grab(最上级网址,备注,l=321,r=2000)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabSignlePage.py", line 55, in grab
+    content = get_content(file)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabSignlePage.py", line 22, in get_content
+    return now.prettify()
+AttributeError: 'NoneType' object has no attribute 'prettify'
+
+
+==================================================
+Error atTue Dec 15 20:45:57 2020
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\main.py", line 21, in <module>
+    GrabPages.grab(最上级网址,备注,l=321,r=2000)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabSignlePage.py", line 55, in grab
+    content = get_content(file)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabSignlePage.py", line 22, in get_content
+    return now.prettify()
+AttributeError: 'NoneType' object has no attribute 'prettify'
+
+
+==================================================
+Error atTue Dec 15 22:48:00 2020
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 598, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 357, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 598, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', TimeoutError(10060, '由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。', None, 10060, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\main.py", line 21, in <module>
+    GrabPages.grab(最上级网址,备注,l=336,r=2000)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabSignlePage.py", line 48, in grab
+    file = requests.get(url,headers=con.init_header,verify=False)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 677, in send
+    history = [resp for resp in gen]
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 677, in <listcomp>
+    history = [resp for resp in gen]
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 237, in resolve_redirects
+    resp = self.send(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', TimeoutError(10060, '由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。', None, 10060, None))
+
+
+==================================================
+Error atTue Dec 15 22:48:48 2020
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 598, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 357, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 598, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\main.py", line 21, in <module>
+    GrabPages.grab(最上级网址,备注,l=336,r=2000)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 41, in grab
+    file = requests.get(url,headers=con.init_header,timeout=con.TimeLimit)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+
+
+==================================================
+Error atTue Dec 15 22:49:49 2020
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 598, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 357, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 598, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\main.py", line 21, in <module>
+    GrabPages.grab(最上级网址,备注,l=336,r=2000)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 41, in grab
+    file = requests.get(url,headers=con.init_header,timeout=con.TimeLimit)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+
+
+==================================================
+Error atTue Dec 15 23:13:32 2020
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 598, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 357, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 598, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', TimeoutError(10060, '由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。', None, 10060, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\main.py", line 21, in <module>
+    GrabPages.grab(最上级网址,备注,l=336,r=2000)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabSignlePage.py", line 48, in grab
+    file = requests.get(url,headers=con.init_header,verify=False)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', TimeoutError(10060, '由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。', None, 10060, None))
+
+
+==================================================
+Error atTue Dec 15 23:25:09 2020
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 598, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 357, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 598, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', TimeoutError(10060, '由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。', None, 10060, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\main.py", line 21, in <module>
+    GrabPages.grab(最上级网址,备注,l=490,r=2000)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabSignlePage.py", line 48, in grab
+    file = requests.get(url,headers=con.init_header,verify=False)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', TimeoutError(10060, '由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。', None, 10060, None))
+
+
+==================================================
+Error atTue Dec 15 23:51:01 2020
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 598, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 357, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 598, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', TimeoutError(10060, '由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。', None, 10060, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\main.py", line 21, in <module>
+    GrabPages.grab(最上级网址,备注,l=502,r=2000)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabSignlePage.py", line 48, in grab
+    file = requests.get(url,headers=con.init_header,verify=False)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 677, in send
+    history = [resp for resp in gen]
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 677, in <listcomp>
+    history = [resp for resp in gen]
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 237, in resolve_redirects
+    resp = self.send(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', TimeoutError(10060, '由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。', None, 10060, None))
+
+
+==================================================
+Error atWed Dec 16 00:40:24 2020
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 598, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 357, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 598, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 264, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', TimeoutError(10060, '由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。', None, 10060, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\main.py", line 21, in <module>
+    GrabPages.grab(最上级网址,备注,l=502,r=2000)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabSignlePage.py", line 48, in grab
+    file = requests.get(url,headers=con.init_header,verify=False)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 677, in send
+    history = [resp for resp in gen]
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 677, in <listcomp>
+    history = [resp for resp in gen]
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 237, in resolve_redirects
+    resp = self.send(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', TimeoutError(10060, '由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。', None, 10060, None))
+
+
+==================================================
+Error atWed Dec 16 01:20:27 2020
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 598, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 272, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    retries = retries.increment(method, url, error=e, _pool=self,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 357, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 598, in urlopen
+    httplib_response = self._make_request(conn, method, url,
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1322, in getresponse
+    response.begin()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 303, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 272, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\main.py", line 21, in <module>
+    GrabPages.grab(最上级网址,备注,l=507,r=2000)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 45, in grab
+    make_pages(text,file)
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabPages.py", line 17, in make_pages
+    SP.grab(text,int(it[0]),it[1])
+  File "d:\文件\大三上\项目制实践\page\static\reptile\beta\GrabSignlePage.py", line 48, in grab
+    file = requests.get(url,headers=con.init_header,verify=False)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\施浩森\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+
