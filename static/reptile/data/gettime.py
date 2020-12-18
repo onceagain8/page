@@ -46,6 +46,7 @@ if __name__ == "__main__":
 						ret[str(year)]["Jan"][i]=ret[str(year)]["Jan"][i]+ret[str(max(2016,year-1))]["Dec"][i]
 				else:
 					ret[str(year)][month_name[month]][i]=ret[str(year)][month_name[month]][i]+ret[str(year)][month_name[month-1]][i]
-	with open("count1.json","w",encoding="utf-8") as f:
+	print("YES")
+	with open(base_path+"/count1.json","w",encoding="utf-8") as f:
 		json.dump(ret,f,ensure_ascii=False,indent=4)    
 	f.close()
