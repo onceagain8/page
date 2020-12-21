@@ -1,7 +1,7 @@
 import os
 import random
 
-TimeLimit = 200000
+TimeLimit = 2000000
 
 version=1.0
 
