@@ -37,12 +37,15 @@ def make_content(now_dir,content):
 def make_accessory(now_dir,item) :
     if not item:
         return 
-    with open(os.path.join(now_dir,item[0]),'wb') as fout:
-        file_dir = os.path.join(con.top_dir,item[1][1:])
-        now = requests.get(file_dir,headers=con.init_header,stream=True)
-        for it in now.iter_content(chunk_size=512):
-            if it:
-                fout.write(it)
+    try:
+        with open(os.path.join(now_dir,item[0]),'wb') as fout:
+            file_dir = os.path.join(con.top_dir,item[1][1:])
+            now = requests.get(file_dir,headers=con.init_header,stream=True)
+            for it in now.iter_content(chunk_size=512):
+                if it:
+                    fout.write(it)
+    except Exception:
+        return
 
 def grab(text,id,url):
     file = requests.get(url,headers=con.init_header,verify=False)
