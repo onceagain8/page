@@ -135,7 +135,7 @@
 				var pagel = (content-1)*perpage;
 				var pager = Math.min(pagel + perpage,total);	
 				for(var i = pagel;i < pager;i++){
-					majorlist.innerHTML += "<div class='list'><p><a href='/show/"+id[i].toString()+"'>"+idname[i]+"</a></p></div>\n";
+					majorlist.innerHTML += "<div class='list'><p><a href='/show/{{typed}}/"+id[i].toString()+"'>"+idname[i]+"</a></p></div>\n";
 				}
 
 				var leftpage = Math.max(1,content-5);
@@ -169,7 +169,7 @@
 			function Init(){
 				mxpage=parseInt(total/10)+(total%10!=0);
 				var headline=document.getElementById("headline");
-				headline.innerHTML="<h1 id=headline>搜索结果:{{s}},搜索结果一共"+total+"条</h1>";
+				headline.innerHTML="<h1 id=headline>搜索结果:{{s}},搜索结果一共"+total+"条{{typed}}</h1>";
 				
 				buildpaging(1);
 

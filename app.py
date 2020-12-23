@@ -60,10 +60,10 @@ def apiresultlist(typed,s):
     print(typed+" "+s)
     print('len = %d'%len(s))
     if(typed == "招标公告"):
-        f = open('.'+date_file+'data/js_table.json','r')
+        f = open('.'+date_file+'data/js_table.json','r',encoding="utf-8")
         #招标公告json文件
     elif(typed == "中标公告"):
-        f = open('.'+date_file+'data/js_table1.json','r')
+        f = open('.'+date_file+'data/js_table1.json','r',encoding="utf-8")
         #中标公告json文件
     d = json.load(f)
     f.close()
@@ -78,17 +78,18 @@ def apiresultlist(typed,s):
     return jsonify(resultlist)#传回json文件。
 
 #这个展示的是招标文件
-@app.route('/show/<pro_id>')
-def show(pro_id):
-    return render_template('show.html',pro_id=pro_id)
-@app.route('/show1/<pro_id>')
-def show1(pro_id):
-    return render_template('show1.html',pro_id=pro_id)
+@app.route('/show/<typed>/<pro_id>')
+def show(typed,pro_id):
+    return render_template('show.html',typed=typed,pro_id=pro_id)
 
 #招标文件
-@app.route('/api/show/<json_id>')
-def find(json_id):
-    nowpath=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static','reptile','data','page', json_id, 'main.json')
+@app.route('/api/show/<typed>/<json_id>')
+def find(typed,json_id):
+    page="page"
+    if(typed == "中标公告"):
+        page="page1"
+    nowpath=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static','reptile','data',page, json_id, 'main.json')
+    htmlpath=os.path.join(os.path.dirname(os.path.abspath(__file__)),'static','reptile','data',page, json_id,'content.html')
     print(nowpath)
     if (os.path.exists(nowpath)):
         dic = {}
@@ -96,8 +97,21 @@ def find(json_id):
             dic=json.load(f)
         f.close()
         return jsonify(dic)
-    return '404'
+    html_content=""
+    with open(htmlpath,"r",encoding="utf-8") as f:
+        html_content=f.read()
+    f.close()
+    return '404\n'+html_content
 
+@app.route('/api/zdata/<year>/<int:month>')
+def zdata(year,month): 
+    month_mapping={1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"Jun",7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"}
+    nowpath=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static','reptile','data','count1.json')
+    with open(nowpath,"r",encoding="utf-8") as f:
+        zdata_dic=json.load(f)
+    f.close()
+    month=month_mapping[month]
+    return jsonify(zdata_dic[year][month])
 
 
 # 导航栏

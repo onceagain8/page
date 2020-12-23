@@ -973,11 +973,13 @@
 					console.log("{{pro_id}}");
 					var dataset=xmlhttp.response;
 					
-					console.log(typeof dataset);
-					if(dataset == '404'){
+					console.log(dataset.indexOf);
+					if(dataset.indexOf('404')>=0){
+						dataset=dataset.slice(4);	
+						console.log(dataset);
 						var docbody=document.getElementById("body");
 						console.log(docbody);
-						docbody.innerHTML="<h1>sorry,not build.</h1>";
+						docbody.innerHTML=dataset;
 					}
 					else {
 						dataset = JSON.parse(xmlhttp.response);
@@ -986,7 +988,7 @@
 					}
 				}
 			}
-			xmlhttp.open("GET","/api/show/{{pro_id}}",true);	
+			xmlhttp.open("GET","/api/show/{{typed}}/{{pro_id}}",true);	
 			xmlhttp.send();
 		}
 	</script>

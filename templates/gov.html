@@ -17,6 +17,8 @@
 			margin-top:5%;
 			margin-left:5%;
 		}
+
+		/* 左侧渐变色的写法,默认滑块在最左侧所以下面white为0% */
 		#guide{
 			height:100%;
 			width:10%;
@@ -33,14 +35,54 @@
 			margin-left:3%;
 			float:left;
 		}
-		#sheet,#map{
-			height:49%;
+		#bar,#map{
+			height:45%;
 			width:100%;
 			margin-top:2%;
 			display:block;
 			border:none;
 			border-radius: 5px 5px 5px 5px;
 			background-color: rgba(255,255,255,0.5);
+		}
+		input[type=range] {
+			-webkit-appearance: none;
+			width: 300px;
+			border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
+		}
+		input[type=range]::-webkit-slider-thumb {
+			-webkit-appearance: none;
+		}
+		input[type=range]::-webkit-slider-runnable-track {
+			height: 15px;
+			border-radius: 10px; /*将轨道设为圆角的*/
+			box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112; /*轨道内置阴影效果*/
+		}
+		input[type=range]:focus {
+			outline: none;
+		}
+		input[type=range]::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			height: 25px;
+			width: 25px;
+			margin-top: -5px; /*使滑块超出轨道部分的偏移量相等*/
+			background: #ffffff; 
+			border-radius: 50%; /*外观设置为圆形*/
+			border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+			box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+		}
+		footer{
+			margin-top:1%;
+		}
+		#slide{
+			margin-top:1%;
+		}
+		#value{
+			font-weight:900;
+			font-family:"楷体";
+			color:white;
+		}
+		#range{
+			width:100%;
 		}
 	</style>
 </head>
@@ -64,10 +106,14 @@
 		</center>
 	</div>
 	<div class="main">
-		<div id="guide"></div>
-		<div id="show">
-			<div id="map" style="margin-top:0"></div>
-			<div id="sheet"></div>
+		<!-- <div id="guide">
+			<input id="range" type="range" min="2016-1" max="2020-12" value="2016-1" onchange="changerange()">
+		</div> -->
+		<div id="map" style="margin-top:0"></div>
+		<div id="bar"></div>
+		<div id="slide">
+			<input type="range" name="range" id="range">
+			<span id="value">0</span>
 		</div>
 	</div>
 	<footer style="text-align: center;">
@@ -79,63 +125,173 @@
 	<script src="https://cdn.bootcdn.net/ajax/libs/echarts/4.8.0/echarts.min.js"></script>
 	<script>
 		var datajson=[
-			{name:"和平区",value: 9703},	{name:"南开区",value: 9675},	{name:"河西区",value: 10401},
-			{name:"河东区",value: 9305},	{name:"河北区",value: 9370},	{name:"红桥区",value: 9275},
-			{name:"滨海新区",value:7776},	{name:"西青区",value: 5973},	{name:"东丽区",value: 4313},
-			{name:"北辰区",value: 5205},	{name:"津南区",value: 4589},	{name:"武清区",value: 7205},
-			{name:"宝坻区",value: 5189},	{name:"宁河区",value: 3498},	{name:"静海区",value: 4310},
-			{name:"蓟州区",value: 3235}
+			{name:"和平区",value: 0},	{name:"南开区",value: 0},	{name:"河西区",value: 0},
+			{name:"河东区",value: 0},	{name:"河北区",value: 0},	{name:"红桥区",value: 0},
+			{name:"滨海新区",value:0},	{name:"西青区",value: 0},	{name:"东丽区",value: 0},
+			{name:"北辰区",value: 0},	{name:"津南区",value: 0},	{name:"武清区",value: 0},
+			{name:"宝坻区",value: 0},	{name:"宁河区",value: 0},	{name:"静海区",value: 0},
+			{name:"蓟州区",value: 0}
 		];
+		var ylabel=[];//柱状图中的数据
+		var xlabel=[];//柱状图中的标签
+		var minnumber=0,maxnumber=0;//用于地图图例的最大最小值设置
+		$.fn.RangeSlider = function(cfg){
+			this.sliderCfg = {
+				min: cfg && !isNaN(parseFloat(cfg.min)) ? Number(cfg.min) : null, 
+				max: cfg && !isNaN(parseFloat(cfg.max)) ? Number(cfg.max) : null,
+				step: cfg && Number(cfg.step) ? cfg.step : 1,
+				value:cfg && !isNaN(parseFloat(cfg.min)) ? Number(cfg.min) : null,
+				callback: cfg && cfg.callback ? cfg.callback : null
+			};
+		
+			var $input = $(this);
+			var min = this.sliderCfg.min;
+			var max = this.sliderCfg.max;
+			var step = this.sliderCfg.step;
+			var value=this.sliderCfg.value;
+			var callback = this.sliderCfg.callback;
+		
+			$input.attr('min', min)
+				.attr('max', max)
+				.attr('value',value)
+				.attr('step', step);
+		
+			$input.bind("input", function(e){
+				$input.attr('value', this.value);
+				$input.css( 'background', 'linear-gradient(to right, #059CFA, white ' + this.value/60*100 + '%, white)' );
+		
+				if ($.isFunction(callback)) {
+					callback(this);
+				}
+			});
+		};
+		var Process=function(dataset){//将dataset转化为echarts可以识别的数组
+			var rank={};
+			for(item in dataset){
+				var r = 1;
+				for (item1 in dataset){
+					if(dataset[item1] > dataset[item])
+					r=r+1;
+				}
+				if(typeof(rank[r]) == 'undefined')	rank[r]=new Array();
+				rank[r].push(item);
+			}
+			xlabel=new Array();
+			ylabel=new Array();
+			datajson=new Array();
+			minnumber=100000000;
+			maxnumber=0;
+			for(var i=1;i <= 16;i++){
+				if(typeof rank[i] == 'undefined')continue;
+				for(var item of rank[i]){
+					xlabel.push((item == "蓟"?"蓟州区":item+"区"));
+					ylabel.push(dataset[item]);
+					minnumber=Math.min(minnumber,dataset[item]);
+					maxnumber=Math.max(maxnumber,dataset[item]+100);
+					datajson.push({name:(item == "蓟"?"蓟州区":item+"区"),value:dataset[item]});
+				}
+			}
+			console.log(xlabel);
+			console.log(ylabel);
+			console.log(dataset);
+		}
+		var change = function($input) {
+			/*滑块的回调函数*/
+			var year = 2016 + Math.floor($input.value/12);
+			var month=1+$input.value%12;
+			document.getElementById("value").innerHTML=year+"年"+month+"月";
+
+			console.log("year:"+year+"  month:"+month);
+			if (window.XMLHttpRequest){//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+				xmlhttp=new XMLHttpRequest();
+			}
+			else{// IE6, IE5 浏览器执行代码
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange=function(){
+				if (xmlhttp.readyState==4 && xmlhttp.status==200)
+				{
+					var dataset = JSON.parse(xmlhttp.response);
+					Process(dataset);
+					loadBar(year,month);
+					loadMap(year,month);
+					
+				}
+			}
+			xmlhttp.open("GET","/api/zdata/"+year+"/"+month,true);
+			xmlhttp.send();
+		}
+ 
+
+//上面是用来处理时间轴的
+		var BarChart = echarts.init(document.getElementById('bar'));
+		var MapChart = echarts.init(document.getElementById('map'));
 		window.onload = function GetMap(){
+			$('input').RangeSlider({ min: 0,   max: 59,  step: 1,  callback: change});
+			loadBar(null,null);
 			var geojson=null;
 			var url='https://geo.datav.aliyun.com/areas_v2/bound/120000_full.json';
 			MapChart.showLoading();
 			$.get(url,null,function(ret){
 				geojson=ret;
-				loadMap(geojson);
+				echarts.registerMap('tianjin',geojson);
+				MapChart.hideLoading();
+				loadMap(null,null);
 			});
 		}
-		var MapChart = echarts.init(document.getElementById('map'));
-		var loadMap = function(geojson){
-			echarts.registerMap('tianjin',geojson);
-			MapChart.hideLoading();
+
+		var loadBar = function(year,month){
+			option = {
+				title:{
+					text:year+"年"+month+"月"+"招标文件分布柱状图\n数据来源：天津市政府采购网",
+					left:"left"
+				},
+				color: ['#3398DB'],
+				tooltip : {  //提示信息
+					trigger: 'axis', //axis轴对称
+					axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+						type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+					}
+				},
+				grid: { //网格
+					left: '3%',
+					right: '4%',
+					bottom: '3%',
+					containLabel: true //把y轴的值显示出来
+				},
+				xAxis : [  //X轴的数据
+					{
+						type : 'category',
+						data : xlabel,
+						axisTick: {
+							alignWithLabel: true
+						}
+					}
+				],
+				yAxis : [  //Y轴的网格已值为准
+					{
+						type : 'value'
+					}
+				],
+				series : [
+					{
+						name:'公告数量', //提示中的信息
+						type:'bar', //图的类型 bar条形
+						barWidth: '40%', //每个条形的宽度比例
+						data:ylabel //Y轴数据
+					}
+				]
+			};
+			BarChart.setOption(option);
+		}
+		//下面是处理地图
+		var loadMap = function(year,month){
 			var data=datajson;
 
-			var geoCoordMap = {
-				'和平区':[117.195907,39.118327],
-				'河东区':[117.226568,39.122125],
-				'河西区':[117.217536,39.101897],
-				'南开区':[117.164143,39.120474],
-				'河北区':[117.201569,39.156632],
-				'红桥区':[117.163301,39.175066],
-				'东丽区':[117.313967,39.087764],
-				'西青区':[117.012247,39.139446],
-				'津南区':[117.382549,38.989577],
-				'北辰区':[117.13482,39.225555],
-				'武清区':[117.057959,39.376925],
-				'宝坻区':[117.308094,39.716965],
-				'滨海新区':[117.654173,39.032846],
-				"宁河区":[117.82828,39.328886],
-				"静海区":[116.925304,38.935671],
-				'蓟州区':[117.407449,40.045342],
-			};
-			var convertData = function (data) {
-				var res = [];
-				for (var i = 0; i < data.length; i++) {
-					var geoCoord = geoCoordMap[data[i].name];
-					if (geoCoord) {
-						res.push({
-							name: data[i].name,
-							value: geoCoord.concat(data[i].value)
-						});
-					}
-				}
-				return res;
-			};
 			//取消浮动图标
 			var option={
 				title:{
-					text:"2016~2020年招标文件分布地图\n数据来源：天津市政府采购网",
+					text:year+"年"+month+"月"+"招标文件分布地图\n数据来源：天津市政府采购网",
 					left:"left"
 				},
 				tooltip:{
@@ -151,8 +307,8 @@
 				visualMap:{
 					show:true,
 					type:'continuous',
-					min:0,
-					max:12000,
+					min:minnumber,
+					max:maxnumber,
 					textStyle:{
 						fontSize:15,
 						color:'#fff'
