@@ -30,25 +30,6 @@ def getmatchval(s1,s2):
     # print('ret = %d'%ret)
     return ret
 
-# @app.route('/resultlist',methods=['post'])
-# def resultlist():
-
-#     s=request.form.get('search')
-#     print(s)
-#     print('len = %d'%len(s))
-#     f = open('.'+date_file+'data/js_table.json','r') 
-#     d = json.load(f)
-#     f.close()
-#     match_val={}
-#     for it in d:
-#         match_val[it]=getmatchval(d[it]['ArticleTitle'],s)
-#     ans=0
-#     for it in d:
-#         if(match_val[it] != len(s) or len(s)==0):
-#             continue
-#         ans = ans + 1
-#     print("finished find")
-#     return render_template('resultlist.html',match_val=match_val,d=d,date_file=date_file,Len=len(s),s=s,ans=ans)
 @app.route('/resultlist',methods=['GET','POST'])
 def resultlist():
     typed=request.form.get('type')
@@ -77,12 +58,12 @@ def apiresultlist(typed,s):
     print("finished find")
     return jsonify(resultlist)#传回json文件。
 
-#这个展示的是招标文件
+#这个展示的是文档
 @app.route('/show/<typed>/<pro_id>')
 def show(typed,pro_id):
     return render_template('show.html',typed=typed,pro_id=pro_id)
 
-#招标文件
+#招标中标文件api
 @app.route('/api/show/<typed>/<json_id>')
 def find(typed,json_id):
     page="page"
@@ -102,7 +83,7 @@ def find(typed,json_id):
         html_content=f.read()
     f.close()
     return '404\n'+html_content
-
+#分时间
 @app.route('/api/zdata/<year>/<int:month>')
 def zdata(year,month): 
     month_mapping={1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"Jun",7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"}
@@ -113,6 +94,20 @@ def zdata(year,month):
     month=month_mapping[month]
     return jsonify(zdata_dic[year][month])
 
+
+@app.route('/api/rank/<type>')
+def get_numberjson(type):
+
+    if(type == 'number'):
+        filepath=os.path.join(os.path.dirname(os.path.abspath(__file__)),'static','reptile','data','number.json')
+    elif(type == 'money'):
+        filepath=os.path.join(os.path.dirname(os.path.abspath(__file__)),'static','reptile','data','money.json')
+    else:
+        return '404'
+    with open(filepath,"r",encoding='utf-8') as f:
+        ret_dic=json.load(f)
+    f.close()
+    return jsonify(ret_dic)
 
 # 导航栏
 @app.route('/game/2048')
@@ -127,9 +122,12 @@ def game():
 @app.route('/gov')
 def gov():
     return render_template('gov.html')
-@app.route('/cpy')
-def cpy():
-    return render_template('cpy.html')
+@app.route('/rank/number')
+def number():
+    return render_template('/rank/number.html')
+@app.route('/rank/money')
+def money():
+    return render_template('/rank/money.html')
 @app.route('/login')
 def login():
     return render_template('login.html')

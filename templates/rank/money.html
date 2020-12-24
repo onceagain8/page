@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>排行榜</title>
+		<link href="/static/css/style.css" rel="stylesheet">
+		<link href="/static/css/main.css"  rel="stylesheet">
+		<link href="/static/css/rank.css"  rel="stylesheet">
+		
+		
+		<style>
+
+			.rightQuery {
+				margin-top: 5%; 
+				margin-left: 10%;
+				height: auto;
+				border-radius: 6px 6px 6px 6px;
+				width: 80%;
+				background-color: white;
+			}
+			#headline{
+				font-size:20px;
+			}
+			.list{
+				display: block;
+				margin-top: 10px;
+				left: 100px;
+				right:100px;
+				min-height: 40px;
+				border:none;
+				border-radius: 5px 5px 5px 5px;
+				background-color: rgba(255,255,255,0.5);
+			}
+			.list a{
+				font-weight: 900;
+				font-size:18px;
+				text-decoration: none;
+				color:black;
+				
+			}
+			.paging{
+				display: flex;
+				align-items: center;
+				margin-left: 10%;
+				margin-top: 10px;
+			}
+			.paging div{
+				border: 1px solid rgb(255, 251, 251);
+				border-style:double;
+				padding: 10px;
+				border-radius: 10px;
+				cursor: pointer;
+				margin: 0 10px;
+				font-size: 14px;
+				font-weight: 800;
+				background-color:rgb(255,255,255);
+			}
+			.paging div .disable{
+				color: #fff;
+				cursor: not-allowed;
+				background-color: rgb(211, 211, 211);
+			}
+			.paging div.active{
+				border: none;
+				background-color: rgb(78, 216, 250);
+				color: #fff;
+			}
+			body,html{
+				height: 100%;
+			}
+			body {
+				margin: 0;
+				padding: 0;
+				font-weight: 500;
+				background: url('/static/image/login/demo-1-bg.jpg');
+				font-family: "Microsoft YaHei","Microsoft YaHei","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
+			}
+			footer{
+				background-color:rgba(255, 255, 255, 0);
+				text-align: center;
+
+				margin-bottom:0px;
+				/* position:fixed; */
+			}
+		</style>
+	</head>
+	<body style="background-image:none;background-color: rgb(231, 231, 222);">
+		<!-- 导航栏 -->
+		<div class="top">
+			<center> 
+				<ul>
+				<li><a href="/">首页</a></li>
+				<li><a href="{{url_for('number')}}">企业视图</a></li>
+				<li><a href="{{url_for('gov')}}">可视化</a></li>
+				<li>
+					<a href="{{url_for('game')}}">小游戏</a>
+					<ul>
+						<li><a href="{{url_for('game_2048')}}">2048</a></li>
+						<li><a href="{{url_for('game_snake')}}">贪吃蛇</a></li>
+					</ul>
+				</li>
+				</ul>
+			</center>      
+		</div>
+		<div class="rank-header">
+			<div class="container">
+				<ul>
+					<li class>
+						<a href="{{url_for('number')}}">中标数量排行榜</a>
+					</li>
+					<li class="current">
+						<a href="{{url_for('money')}}">中标金额排行榜</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="rightQuery">
+			<p id=headline>榜单合计<span style="color:skyblue;">16052</span>家企业</p>
+			<div id = "majorlist">
+				<div class='list'><p><a>None</a></p></div>
+				<div class='list'><p><a>None</a></p></div>
+				<div class='list'><p><a>None</a></p></div>
+				<div class='list'><p><a>None</a></p></div>
+				<div class='list'><p><a>None</a></p></div>
+				<div class='list'><p><a>None</a></p></div>
+				<div class='list'><p><a>None</a></p></div>
+			</div>
+		</div>
+		<div class="paging" id="paging">
+			<div class='first'">首页</div>
+			<div class='prev disabled')">上一页</div>
+			<div class='pagingDiv active'">1</div>
+			<div class='pagingDiv'">2</div>
+			<div class='pagingDiv'">3</div>
+			<div class='pagingDiv'">4</div>
+			<div class='pagingDiv'">5</div>
+			<div class="next" onclick="clickpage(-1)">下一页</div>
+			<div class="last" onclick="clickpage(0)">尾页</div>
+		</div>
+		<footer>
+			<p style="font-weight: 900;font-size: 20px;color: white;">
+			powered by TJU502
+			</p>
+		</footer>
+		<script>
+			var xmlhttp;
+			var perpage=10;
+			var total=16052,rank,data;
+			var mxpage=0;
+			function buildpaging(content){
+				var majorlist=document.getElementById("majorlist");
+				majorlist.innerHTML="";
+				var pagel = (content-1)*perpage;
+				var pager = Math.min(pagel + perpage,total);	
+				for(var i = pagel;i < pager;i++){
+					if(i == 0){
+						var s="\
+						<div class = 'list'> \
+							<div class='rank1'><span class='num'>1</span></div>\
+							<div class='message'>\
+								<div class='title'><a href='/company/'"+rank[i]+">"+rank[i]+"</a></div>\
+								<div class='number'><p>中标金额："+data[rank[i]]+"万元</p></div>\
+							</div>\
+						</div>\
+						";	
+						majorlist.innerHTML+=s;
+					}
+					else if(i == 1){
+						var s="\
+						<div class = 'list'> \
+							<div class='rank2'><span class='num'>2</span></div>\
+							<div class='message'>\
+								<div class='title'><a href='/company/'"+rank[i]+">"+rank[i]+"</a></div>\
+								<div class='number'><p>中标金额："+data[rank[i]]+"万元</p></div>\
+							</div>\
+						</div>\
+						";
+						majorlist.innerHTML+=s;
+					}
+					else if(i == 2){
+						var s="\
+						<div class = 'list'> \
+							<div class='rank3'><span class='num'>3</span></div>\
+							<div class='message'>\
+								<div class='title'><a href='/company/'"+rank[i]+">"+rank[i]+"</a></div>\
+								<div class='number'><p>中标金额："+data[rank[i]]+"万元</p></div>\
+							</div>\
+						</div>\
+						";
+						majorlist.innerHTML+=s;
+					}
+					else{
+						var s="\
+						<div class = 'list'> \
+							<div class='rank4'><span class='num'>"+i.toString()+"</span></div>\
+							<div class='message'>\
+								<div class='title'><a href='/company/'"+rank[i]+">"+rank[i]+"</a></div>\
+								<div class='number'><p>中标金额："+data[rank[i]]+"万元</p></div>\
+							</div>\
+						</div>\
+						";
+						majorlist.innerHTML+=s;						
+					}
+					// majorlist.innerHTML += "<div class='list'><p><a href='/show/{{typed}}/"+id[i].toString()+"'>"+idname[i]+"</a></p></div>\n";
+				}
+
+				var leftpage = Math.max(1,content-5);
+				var rightpage= Math.min(mxpage,Math.max(content+5,10));
+
+				if(rightpage-leftpage+1 < 11){
+					if(leftpage == 1)rightpage=Math.min(mxpage,leftpage+10);
+					else leftpage = Math.max(1,rightpage-10);
+				}
+
+				var paging=document.getElementById("paging");
+				paging.innerHTML="	<div class='first' onclick='clickpage(-3)'>首页</div>\n";
+				
+				if(content == 1)paging.innerHTML += "<div class='prev disabled' onclick='clickpage(-2)'>上一页</div>\n";
+				else paging.innerHTML += "<div class='prev' onclick='clickpage(-2)'>上一页</div>\n";
+				
+				for(var line = leftpage;line<=rightpage;line++){
+					if(line == content){
+						console.log(line);
+						paging.innerHTML+="<div class='pagingDiv active' onclick='clickpage("+line.toString()+")'>"+line.toString()+"</div>\n"
+					}
+					else{
+						paging.innerHTML+="<div class='pagingDiv' onclick='clickpage("+line.toString()+")'>"+line.toString()+"</div>\n"
+					}
+				}
+
+				if(content != mxpage)paging.innerHTML +="<div class='next' onclick='clickpage(-1)'>下一页</div>\n"
+				else paging.innerHTML +="<div class='next disabled' onclick='clickpage(-1)'>下一页</div>\n"
+				paging.innerHTML +="<div class='last' onclick='clickpage(0)'>尾页</div>\n";
+			}
+			function Init(){
+				mxpage=parseInt(total/10)+(total%10!=0);
+				var headline=document.getElementById("headline");
+				headline.innerHTML="<h1 id=headline>榜单合计<span style='color:skyblue;'>"+total+"</span>家企业</h1>";
+				
+				buildpaging(1);
+
+			}
+			window.onload=function(){	
+				if (window.XMLHttpRequest){//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+					xmlhttp=new XMLHttpRequest();
+				}
+				else{// IE6, IE5 浏览器执行代码
+					xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				xmlhttp.onreadystatechange=function(){
+					if (xmlhttp.readyState==4 && xmlhttp.status==200)
+					{
+						if(xmlhttp.response=='404'){
+							return;
+						}
+						var dataset = JSON.parse(xmlhttp.response);
+						rank=Object.keys(dataset).sort(function(a,b){return dataset[b]-dataset[a];})
+						data=dataset;
+						// console.log(dataset);
+						// for (var i =0 ;i < rank.length;i++){
+						// 	console.log(rank[i],dataset[rank[i]]);
+						// }
+						// console.log(idname);
+						Init();
+					}
+				}
+				xmlhttp.open("GET","/api/rank/money",true);
+				xmlhttp.send();
+			}
+			
+			function clickpage(content){
+				console.log(content,typeof content);
+				nowp=parseInt(document.getElementsByClassName("active")[0].innerText);
+				console.log("nowp="+nowp,typeof nowp);
+				if(content>0){
+					buildpaging(content);
+				}
+				else if(content == -3){
+					buildpaging(1);
+				}
+				else if(content == 0){
+					buildpaging(mxpage);
+				}
+				else if(content == -2){
+					if(nowp == 1){
+						window.alert("已经是第一页了！");
+					}else{
+						buildpaging(nowp-1);
+					}
+				}
+				else{
+					if(nowp == mxpage){
+						window.alert("已经是第一页了！");
+					}else{
+						buildpaging(nowp+1);
+					}
+				}
+			}
+
+		</script>
+	</body>
+</html>

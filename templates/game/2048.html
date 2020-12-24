@@ -11,22 +11,22 @@
 
 </head>
 <body style="background:url(/static/image/login/demo-1-bg.jpg);width:100%; height:100%;">
-<div class="top">
-  <center> 
-    <ul>
-    <li><a href="/">首页</a></li>
-    <li><a href="{{url_for('cpy')}}">企业视图</a></li>
-    <li><a href="{{url_for('gov')}}">政府视图</a></li>
-    <li>
-      <a href="{{url_for('game')}}">小游戏</a>
+  <div class="top">
+    <center> 
       <ul>
-        <li><a href="{{url_for('game_2048')}}">2048</a></li>
-        <li><a href="{{url_for('game_snake')}}">贪吃蛇</a></li>
+      <li><a href="/">首页</a></li>
+      <li><a href="{{url_for('number')}}">企业视图</a></li>
+      <li><a href="{{url_for('gov')}}">可视化</a></li>
+      <li>
+        <a href="{{url_for('game')}}">小游戏</a>
+        <ul>
+          <li><a href="{{url_for('game_2048')}}">2048</a></li>
+          <li><a href="{{url_for('game_snake')}}">贪吃蛇</a></li>
+        </ul>
+      </li>
       </ul>
-    </li>
-    </ul>
-  </center>       
-</div>
+    </center>      
+  </div>
 <div class="header" style="padding-top:50px">
     <div id="button-cell">
 		<div class="button-cell">2048</div>

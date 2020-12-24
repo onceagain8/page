@@ -1,0 +1,86 @@
+.rank-header {
+    background: #ffbd13;
+    position: relative;
+    top:50px;
+    height:230px;
+    background-image: url("/static/image/rank/排行榜.png");
+}
+.container ul,li{ padding:0;margin:0;list-style:none}
+
+.rank-header ul{
+    padding-inline-start: 0px;
+    display: block;
+    width: 100%;
+    color: #6a6a6a;
+    font-size: 20px;
+    font-weight: 700;
+    height: 30%;
+    overflow: hidden;
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+}
+.rank-header li{
+    background:#eee9e9;
+    display: block;
+    border-radius:6px 6px 0 0;
+    position: relative;
+    width:50%;
+    text-align: center;
+    float:left;
+    height:70px;
+}
+.rank-header .current{
+    background: #fff;
+    height: 70px;
+    line-height: 70px;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+.rank-header .current a{
+    background: #fff;
+    height: 70px;
+    line-height: 70px;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+    color: #3385ff;
+}
+.container ul li a{
+    height: 70px;
+    line-height: 70px;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+    color: black;
+}
+.container {
+    width: 80%;
+    height:100%;
+    left:10%;
+    position: relative;
+    overflow: hidden;
+}
+
+/*包含以下五种的链接*/
+a {
+    text-decoration: none;
+}
+/*正常的未被访问过的链接*/
+a:link {
+    text-decoration: none;
+}
+/*已经访问过的链接*/
+a:visited {
+    text-decoration: none;
+}
+/*鼠标划过(停留)的链接*/
+a:hover {
+    text-decoration: none;
+}
+/* 正在点击的链接，鼠标在元素上按下还没有松开*/
+a:active {
+    text-decoration: none;
+}
+/* 获得焦点的时候 鼠标松开时显示的颜色*/
+a:focus {
+    text-decoration: none;
+}
