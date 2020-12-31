@@ -129,13 +129,13 @@
 			</div>
 		</div>
 		<div class="paging" id="paging">
-			<div class='first'">首页</div>
-			<div class='prev disabled')">上一页</div>
-			<div class='pagingDiv active'">1</div>
-			<div class='pagingDiv'">2</div>
-			<div class='pagingDiv'">3</div>
-			<div class='pagingDiv'">4</div>
-			<div class='pagingDiv'">5</div>
+			<div class="first">首页</div>
+			<div class='prev disabled'>上一页</div>
+			<div class='pagingDiv active'>1</div>
+			<div class='pagingDiv'>2</div>
+			<div class='pagingDiv'>3</div>
+			<div class='pagingDiv'>4</div>
+			<div class='pagingDiv'>5</div>
 			<div class="next" onclick="clickpage(-1)">下一页</div>
 			<div class="last" onclick="clickpage(0)">尾页</div>
 		</div>
@@ -160,7 +160,7 @@
 						<div class = 'list'> \
 							<div class='rank1'><span class='num'>1</span></div>\
 							<div class='message'>\
-								<div class='title'><a href='/company/'"+rank[i]+">"+rank[i]+"</a></div>\
+								<div class='title'><a href='/company/"+rank[i]+"'>"+rank[i]+"</a></div>\
 								<div class='number'><p>中标数量："+data[rank[i]]+"</p></div>\
 							</div>\
 						</div>\
@@ -172,7 +172,7 @@
 						<div class = 'list'> \
 							<div class='rank2'><span class='num'>2</span></div>\
 							<div class='message'>\
-								<div class='title'><a href='/company/'"+rank[i]+">"+rank[i]+"</a></div>\
+								<div class='title'><a href='/company/"+rank[i]+"'>"+rank[i]+"</a></div>\
 								<div class='number'><p>中标数量："+data[rank[i]]+"</p></div>\
 							</div>\
 						</div>\
@@ -184,7 +184,7 @@
 						<div class = 'list'> \
 							<div class='rank3'><span class='num'>3</span></div>\
 							<div class='message'>\
-								<div class='title'><a href='/company/'"+rank[i]+">"+rank[i]+"</a></div>\
+								<div class='title'><a href='/company/"+rank[i]+"'>"+rank[i]+"</a></div>\
 								<div class='number'><p>中标数量："+data[rank[i]]+"</p></div>\
 							</div>\
 						</div>\
@@ -194,9 +194,9 @@
 					else{
 						var s="\
 						<div class = 'list'> \
-							<div class='rank4'><span class='num'>"+i.toString()+"</span></div>\
+							<div class='rank4'><span class='num'>"+(i+1).toString()+"</span></div>\
 							<div class='message'>\
-								<div class='title'><a href='/company/'"+rank[i]+">"+rank[i]+"</a></div>\
+								<div class='title'><a href='/company/"+rank[i]+"'>"+rank[i]+"</a></div>\
 								<div class='number'><p>中标数量："+data[rank[i]]+"</p></div>\
 							</div>\
 						</div>\

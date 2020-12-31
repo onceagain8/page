@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>{{name}}</title>
+			<link rel="stylesheet" href="/static/css/welcome/style.css">
+		</head>
+		<body>
+			<div id="main">
+				<div class="container">
+					<h1 class="effect1">
+						{{name}}
+					</h1>
+						<p>点击任意地方继续访问...</p>
+				</div>
+				<section>
+					<div class="item"></div>
+					<div class="item"></div>
+					<div class="item"></div>
+					<div class="item"></div>
+					<div class="item"></div>
+					<div class="item"></div>
+					<div class="item"></div>
+					<div class="item"></div>
+					<div class="item"></div>
+					<div class="item"></div>
+				</section>
+				<script src='/static/js/welcome/anime.min.js'></script>
+				<script src="/static/js/welcome/script.js"></script>
+			</div>
+		</body>
+		<script>
+			var money;
+			var count;
+			var dict;
+			var div = document.getElementById("main");
+			div.onclick=function(){
+				window.location.href="/company/t/{{name}}";
+			}
+			// window.onload=function(){
+			// 	if (window.XMLHttpRequest){//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+			// 		xmlhttp=new XMLHttpRequest();
+			// 	}
+			// 	else{// IE6, IE5 浏览器执行代码
+			// 		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			// 	}
+			// 	xmlhttp.onreadystatechange=function(){
+			// 		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			// 		{
+			// 			console.log("{{name}}");
+			// 			var dataset = JSON.parse(xmlhttp.response);
+			// 			money=dataset["金额"];
+			// 			count=dataset["数量"];
+			// 			dict = dataset["详细信息"]
+			// 			console.log(dict);
+			// 			console.log(money);
+			// 			console.log(count);
+			// 		}
+			// 	}
+			// 	xmlhttp.open("GET","/api/company/{{name}}",true);
+			// 	xmlhttp.send();
+			// }
+		</script>
+	</html>

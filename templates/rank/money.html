@@ -160,7 +160,7 @@
 						<div class = 'list'> \
 							<div class='rank1'><span class='num'>1</span></div>\
 							<div class='message'>\
-								<div class='title'><a href='/company/'"+rank[i]+">"+rank[i]+"</a></div>\
+								<div class='title'><a href='/company/"+rank[i]+"'>"+rank[i]+"</a></div>\
 								<div class='number'><p>中标金额："+data[rank[i]]+"万元</p></div>\
 							</div>\
 						</div>\
@@ -172,7 +172,7 @@
 						<div class = 'list'> \
 							<div class='rank2'><span class='num'>2</span></div>\
 							<div class='message'>\
-								<div class='title'><a href='/company/'"+rank[i]+">"+rank[i]+"</a></div>\
+								<div class='title'><a href='/company/"+rank[i]+"'>"+rank[i]+"</a></div>\
 								<div class='number'><p>中标金额："+data[rank[i]]+"万元</p></div>\
 							</div>\
 						</div>\
@@ -184,7 +184,7 @@
 						<div class = 'list'> \
 							<div class='rank3'><span class='num'>3</span></div>\
 							<div class='message'>\
-								<div class='title'><a href='/company/'"+rank[i]+">"+rank[i]+"</a></div>\
+								<div class='title'><a href='/company/"+rank[i]+"'>"+rank[i]+"</a></div>\
 								<div class='number'><p>中标金额："+data[rank[i]]+"万元</p></div>\
 							</div>\
 						</div>\
@@ -194,9 +194,9 @@
 					else{
 						var s="\
 						<div class = 'list'> \
-							<div class='rank4'><span class='num'>"+i.toString()+"</span></div>\
+							<div class='rank4'><span class='num'>"+(i+1).toString()+"</span></div>\
 							<div class='message'>\
-								<div class='title'><a href='/company/'"+rank[i]+">"+rank[i]+"</a></div>\
+								<div class='title'><a href='/company/"+rank[i]+"'>"+rank[i]+"</a></div>\
 								<div class='number'><p>中标金额："+data[rank[i]]+"万元</p></div>\
 							</div>\
 						</div>\

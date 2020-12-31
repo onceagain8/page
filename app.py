@@ -12,11 +12,11 @@ date_file='/static/reptile/'
 
 
 
-
+# 首页
 @app.route('/')
 def index(): 
     return render_template("index.html")
-
+# 搜索算法
 def getmatchval(s1,s2):
     len1 = len(s1)
     len2 = len(s2)
@@ -29,13 +29,14 @@ def getmatchval(s1,s2):
         ret = max(ret,k)
     # print('ret = %d'%ret)
     return ret
-
+#搜索后结果显示页面
 @app.route('/resultlist',methods=['GET','POST'])
 def resultlist():
     typed=request.form.get('type')
     s=request.form.get('search')
     return render_template('resultlist.html',typed=typed,s=s)
 
+#搜索后的结果显示页面api（调用搜索引擎）
 @app.route('/api/resultlist/<typed>/<s>')
 def apiresultlist(typed,s):
     print(typed+" "+s)
@@ -83,7 +84,7 @@ def find(typed,json_id):
         html_content=f.read()
     f.close()
     return '404\n'+html_content
-#分时间
+#分时间展示招标分布的api
 @app.route('/api/zdata/<year>/<int:month>')
 def zdata(year,month): 
     month_mapping={1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"Jun",7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"}
@@ -94,7 +95,7 @@ def zdata(year,month):
     month=month_mapping[month]
     return jsonify(zdata_dic[year][month])
 
-
+# 查询排名的api
 @app.route('/api/rank/<type>')
 def get_numberjson(type):
 
@@ -108,7 +109,24 @@ def get_numberjson(type):
         ret_dic=json.load(f)
     f.close()
     return jsonify(ret_dic)
+@app.route("/company/<string:name>")
+def welcomecompany(name):
+    return render_template("company.html",name=name)
 
+@app.route("/company/t/<string:name>")
+def showcompany(name):
+    print(name)
+    return render_template("company_show.html",name=name)
+
+#用来反馈排行榜部分企业详细信息api
+@app.route("/api/company/<string:name>")
+def apifind(name):
+    json_path=os.path.join(os.path.dirname(os.path.abspath(__file__)),'static','reptile','data','result.json')
+    with open(json_path,"r",encoding="utf-8") as f:
+        json_dic=json.load(f)
+    if(name in json_dic.keys()):
+        return jsonify(json_dic[name])
+    return "404"
 # 导航栏
 @app.route('/game/2048')
 def game_2048():
