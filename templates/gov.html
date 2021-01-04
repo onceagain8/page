@@ -230,7 +230,8 @@
 			$('input').RangeSlider({ min: 0,   max: 59,  step: 1,  callback: change});
 			loadBar(null,null);
 			var geojson=null;
-			var url='https://geo.datav.aliyun.com/areas_v2/bound/120000_full.json';
+			var url="../static/120000_full.json";
+			// var url='https://geo.datav.aliyun.com/areas_v2/bound/120000_full.json';
 			MapChart.showLoading();
 			$.get(url,null,function(ret){
 				geojson=ret;
