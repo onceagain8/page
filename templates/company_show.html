@@ -185,7 +185,7 @@
 			function Init(){
 				mxpage=parseInt(total/perpage)+(total%perpage!=0);
 				var headline=document.getElementById("headline");
-				headline.innerHTML="<h1 id=headline>企业中标公告总数：<span style='color:skyblue;'>"+total+"</span>份</h1>";
+				headline.innerHTML="<h1 id=headline>企业中标公告总数：<span style='color:skyblue;'>"+total+"</span>份,总金额：<span style='color:skyblue;'>"+money.toFixed(4)+"</span>万元</h1>";
 				
 				buildpaging(1);
 
@@ -206,7 +206,7 @@
 						var dataset = JSON.parse(xmlhttp.response);
                         money=dataset["金额"];
                         total=dataset["数量"];
-                        data = dataset["详细信息"]
+                        data = dataset["详细信息"];
                         console.log(money);
                         console.log(data);
                         console.log(total);
