@@ -4,3 +4,4 @@
 ```python
 python app.py
 ```
+缺少的安装包自行```python pip install ```即可
